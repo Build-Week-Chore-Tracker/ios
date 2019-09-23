@@ -29,7 +29,7 @@
         <relationship name="relationship_assigned_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
         <relationship name="relationship_chore" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="relationship_chore_template" inverseEntity="Chore" syncable="YES"/>
         <relationship name="relationship_owner_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="relationship_owned_chore_template" inverseEntity="User" syncable="YES"/>
-        <relationship name="relationship_parent_template" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreTemplate" syncable="YES"/>
+        <relationship name="relationship_parent_template" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="relationship_parent_template" inverseEntity="ChoreTemplate" syncable="YES"/>
     </entity>
     <entity name="Points" representedClassName="Points" syncable="YES" codeGenerationType="class">
         <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -64,8 +64,8 @@
     <elements>
         <element name="User" positionX="-696.0390625" positionY="-48.9453125" width="198.31640625" height="240"/>
         <element name="Settings" positionX="-404.5859375" positionY="-180.9453125" width="128" height="120"/>
-        <element name="Points" positionX="-399.95703125" positionY="372.01953125" width="128" height="135"/>
-        <element name="ChoreTemplate" positionX="-64.1875" positionY="-202.1796875" width="170.1953125" height="270"/>
-        <element name="Chore" positionX="-12.94921875" positionY="246.76171875" width="158.296875" height="225"/>
+        <element name="Points" positionX="-435.2578125" positionY="244.875" width="128" height="135"/>
+        <element name="ChoreTemplate" positionX="-196.80078125" positionY="-148.7578125" width="170.1953125" height="270"/>
+        <element name="Chore" positionX="-6.6171875" positionY="163.7265625" width="158.296875" height="225"/>
     </elements>
 </model>
