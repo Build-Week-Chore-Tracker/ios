@@ -16,6 +16,22 @@
 		E0A7F3B1233849AB0038E55A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B0233849AB0038E55A /* UserPreferences.swift */; };
 		E0A7F3B423384BD40038E55A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B223384BD40038E55A /* Networking.swift */; };
 		E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */; };
+		E0A7F3B723396C5F0038E55A /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B623396C5F0038E55A /* UserRepresentation.swift */; };
+		E0A7F3B923396C7C0038E55A /* SettingsRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B823396C7C0038E55A /* SettingsRepresentation.swift */; };
+		E0A7F3BB23396C980038E55A /* PointsRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3BA23396C980038E55A /* PointsRepresentation.swift */; };
+		E0A7F3BD23396CC40038E55A /* ChoreTemplateRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3BC23396CC40038E55A /* ChoreTemplateRepresentation.swift */; };
+		E0A7F3BF23396CF50038E55A /* ChoreRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3BE23396CF50038E55A /* ChoreRepresentation.swift */; };
+		E0A7F3C123396D6D0038E55A /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3C023396D6D0038E55A /* User+Convenience.swift */; };
+		E0A7F3C323396D810038E55A /* Settings+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3C223396D810038E55A /* Settings+Convenience.swift */; };
+		E0A7F3C523396D970038E55A /* Points+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3C423396D970038E55A /* Points+Convenience.swift */; };
+		E0A7F3C723396DAB0038E55A /* ChoreTemplate+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3C623396DAB0038E55A /* ChoreTemplate+Convenience.swift */; };
+		E0A7F3C923396DC60038E55A /* Chore+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3C823396DC60038E55A /* Chore+Convenience.swift */; };
+		E0A7F3CB23396DF10038E55A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3CA23396DF10038E55A /* CoreDataStack.swift */; };
+		E0A7F3CE23396E710038E55A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3CD23396E710038E55A /* UserController.swift */; };
+		E0A7F3D023396E8E0038E55A /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3CF23396E8E0038E55A /* SettingsController.swift */; };
+		E0A7F3D223396EA40038E55A /* PointsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D123396EA40038E55A /* PointsController.swift */; };
+		E0A7F3D423396EC50038E55A /* ChoreTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */; };
+		E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D523396EDB0038E55A /* ChoreController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +46,22 @@
 		E0A7F3B0233849AB0038E55A /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		E0A7F3B223384BD40038E55A /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		E0A7F3B623396C5F0038E55A /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		E0A7F3B823396C7C0038E55A /* SettingsRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepresentation.swift; sourceTree = "<group>"; };
+		E0A7F3BA23396C980038E55A /* PointsRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRepresentation.swift; sourceTree = "<group>"; };
+		E0A7F3BC23396CC40038E55A /* ChoreTemplateRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTemplateRepresentation.swift; sourceTree = "<group>"; };
+		E0A7F3BE23396CF50038E55A /* ChoreRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRepresentation.swift; sourceTree = "<group>"; };
+		E0A7F3C023396D6D0038E55A /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
+		E0A7F3C223396D810038E55A /* Settings+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+Convenience.swift"; sourceTree = "<group>"; };
+		E0A7F3C423396D970038E55A /* Points+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Points+Convenience.swift"; sourceTree = "<group>"; };
+		E0A7F3C623396DAB0038E55A /* ChoreTemplate+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChoreTemplate+Convenience.swift"; sourceTree = "<group>"; };
+		E0A7F3C823396DC60038E55A /* Chore+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chore+Convenience.swift"; sourceTree = "<group>"; };
+		E0A7F3CA23396DF10038E55A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		E0A7F3CD23396E710038E55A /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		E0A7F3CF23396E8E0038E55A /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		E0A7F3D123396EA40038E55A /* PointsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsController.swift; sourceTree = "<group>"; };
+		E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTemplateController.swift; sourceTree = "<group>"; };
+		E0A7F3D523396EDB0038E55A /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +94,7 @@
 		E0A7F3942338130E0038E55A /* ChoreTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E0A7F3CC23396E1F0038E55A /* Convenience */,
 				E0A7F3A8233813330038E55A /* Model Controllers */,
 				E0A7F3A72338132D0038E55A /* Models */,
 				E0A7F3A92338134E0038E55A /* Resources */,
@@ -76,6 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				E0A7F3AD233813BD0038E55A /* ChoreTracker.xcdatamodeld */,
+				E0A7F3B623396C5F0038E55A /* UserRepresentation.swift */,
+				E0A7F3B823396C7C0038E55A /* SettingsRepresentation.swift */,
+				E0A7F3BA23396C980038E55A /* PointsRepresentation.swift */,
+				E0A7F3BC23396CC40038E55A /* ChoreTemplateRepresentation.swift */,
+				E0A7F3BE23396CF50038E55A /* ChoreRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,6 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				E0A7F3B0233849AB0038E55A /* UserPreferences.swift */,
+				E0A7F3CA23396DF10038E55A /* CoreDataStack.swift */,
+				E0A7F3CD23396E710038E55A /* UserController.swift */,
+				E0A7F3CF23396E8E0038E55A /* SettingsController.swift */,
+				E0A7F3D123396EA40038E55A /* PointsController.swift */,
+				E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */,
+				E0A7F3D523396EDB0038E55A /* ChoreController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -122,6 +166,18 @@
 				E0A7F39E233813110038E55A /* LaunchScreen.storyboard */,
 			);
 			path = "Story Boards";
+			sourceTree = "<group>";
+		};
+		E0A7F3CC23396E1F0038E55A /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7F3C023396D6D0038E55A /* User+Convenience.swift */,
+				E0A7F3C223396D810038E55A /* Settings+Convenience.swift */,
+				E0A7F3C423396D970038E55A /* Points+Convenience.swift */,
+				E0A7F3C623396DAB0038E55A /* ChoreTemplate+Convenience.swift */,
+				E0A7F3C823396DC60038E55A /* Chore+Convenience.swift */,
+			);
+			path = Convenience;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,12 +251,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A7F3CE23396E710038E55A /* UserController.swift in Sources */,
+				E0A7F3BD23396CC40038E55A /* ChoreTemplateRepresentation.swift in Sources */,
 				E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */,
+				E0A7F3B723396C5F0038E55A /* UserRepresentation.swift in Sources */,
 				E0A7F3B423384BD40038E55A /* Networking.swift in Sources */,
+				E0A7F3B923396C7C0038E55A /* SettingsRepresentation.swift in Sources */,
 				E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */,
 				E0A7F3B1233849AB0038E55A /* UserPreferences.swift in Sources */,
+				E0A7F3BB23396C980038E55A /* PointsRepresentation.swift in Sources */,
+				E0A7F3C123396D6D0038E55A /* User+Convenience.swift in Sources */,
+				E0A7F3D223396EA40038E55A /* PointsController.swift in Sources */,
 				E0A7F3982338130E0038E55A /* ViewController.swift in Sources */,
+				E0A7F3C323396D810038E55A /* Settings+Convenience.swift in Sources */,
+				E0A7F3D423396EC50038E55A /* ChoreTemplateController.swift in Sources */,
+				E0A7F3C923396DC60038E55A /* Chore+Convenience.swift in Sources */,
+				E0A7F3CB23396DF10038E55A /* CoreDataStack.swift in Sources */,
+				E0A7F3BF23396CF50038E55A /* ChoreRepresentation.swift in Sources */,
+				E0A7F3D023396E8E0038E55A /* SettingsController.swift in Sources */,
+				E0A7F3C523396D970038E55A /* Points+Convenience.swift in Sources */,
+				E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */,
 				E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */,
+				E0A7F3C723396DAB0038E55A /* ChoreTemplate+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
