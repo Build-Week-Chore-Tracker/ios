@@ -32,6 +32,7 @@
 		E0A7F3D223396EA40038E55A /* PointsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D123396EA40038E55A /* PointsController.swift */; };
 		E0A7F3D423396EC50038E55A /* ChoreTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */; };
 		E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D523396EDB0038E55A /* ChoreController.swift */; };
+		E0A7F3D823399AFC0038E55A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D723399AFC0038E55A /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		E0A7F3D123396EA40038E55A /* PointsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsController.swift; sourceTree = "<group>"; };
 		E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTemplateController.swift; sourceTree = "<group>"; };
 		E0A7F3D523396EDB0038E55A /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreController.swift; sourceTree = "<group>"; };
+		E0A7F3D723399AFC0038E55A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				E0A7F3C423396D970038E55A /* Points+Convenience.swift */,
 				E0A7F3C623396DAB0038E55A /* ChoreTemplate+Convenience.swift */,
 				E0A7F3C823396DC60038E55A /* Chore+Convenience.swift */,
+				E0A7F3D723399AFC0038E55A /* Date.swift */,
 			);
 			path = Convenience;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A7F3D823399AFC0038E55A /* Date.swift in Sources */,
 				E0A7F3CE23396E710038E55A /* UserController.swift in Sources */,
 				E0A7F3BD23396CC40038E55A /* ChoreTemplateRepresentation.swift in Sources */,
 				E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */,

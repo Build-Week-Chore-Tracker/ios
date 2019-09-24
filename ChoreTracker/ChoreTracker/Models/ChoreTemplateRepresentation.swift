@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+struct ChoreTemplateRepresentation {
+    let id:                 Int32
+    let name:               String
+    let description:        String
+    let period:             String
+    let picture_evidence:   Bool = false
+    let points:             Int?
+    let custom:             Bool
+    let user_id:            Int32?
+    let parent_template_id: Int32?
+    let notes:              String?
+    let assigned_user_id:   Int32?
+}

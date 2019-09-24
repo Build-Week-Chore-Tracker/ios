@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct PointsRepresentation {
+    let id:             Int
+    let user_id:        Int
+    let start_date:     String
+    let end_date:       String
+    let total_points:   Int
+}

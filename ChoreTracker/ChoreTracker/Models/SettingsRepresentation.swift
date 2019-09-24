@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct SettingsRepresentation {
+    let id:             Int
+    let family_picture: String?
+    let week_start_day: String = "Sunday"
+}
