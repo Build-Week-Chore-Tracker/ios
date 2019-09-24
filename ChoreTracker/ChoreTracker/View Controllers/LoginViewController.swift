@@ -10,12 +10,34 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
+	// MARK: - Properties
+
+
+
+	// MARK: - IBOutlets
+	
+	@IBOutlet weak var parentSegmentControl: UISegmentedControl!
+	@IBOutlet weak var loginSegmentControl: UISegmentedControl!
+	@IBOutlet weak var signupLoginLabel: UILabel!
+	@IBOutlet weak var emailTextField: UITextField!
+	@IBOutlet weak var usernameTextField: UITextField!
+	@IBOutlet weak var passwordTextField: UITextField!
+	@IBOutlet weak var loginButtonText: UIButton!
+
+
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
+
+	@IBAction func parentSegmentControl(_ sender: Any) {
+	}
+	@IBAction func loginSegmentControl(_ sender: Any) {
+	}
+	@IBAction func loginButtonTapped(_ sender: Any) {
+	}
 
     /*
     // MARK: - Navigation
