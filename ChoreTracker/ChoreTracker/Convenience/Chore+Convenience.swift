@@ -12,31 +12,31 @@ import CoreData
 extension Chore {
     
     var choreRepresentation: ChoreRepresentation? {
-        guard   let chore_template_id = self.chore_template?.id,
-                let created_date = created_date,
-                let owner_user = self.owner
+        guard   let choreTemplateID = self.choreTemplate?.id,
+                let createdDate = createdDate,
+                let ownerUser = self.owner
                 else { return nil }
-        let assigned_user_id = assigned_user?.id ?? nil
+        let assignedUserID = assignedUser?.id ?? nil
         return  ChoreRepresentation(id: id,
-                                   chore_template_id: chore_template_id,
-                                   created_date: created_date.iso8601(),
-                                   due_date: due_date?.iso8601() ?? "",
-                                   done_date: done_date?.iso8601(),
-                                   approved_date: approved_date?.iso8601(),
-                                   assigned_user_id: assigned_user_id,
-                                   owner_user_id: owner_user.id,
-                                   assignee_comment: assignee_comment ?? nil)
+                                   choreTemplateID: choreTemplateID,
+                                   createdDate: createdDate.iso8601(),
+                                   dueDate: dueDate?.iso8601() ?? "",
+                                   doneDate: doneDate?.iso8601(),
+                                   approvedDate: approvedDate?.iso8601(),
+                                   assignedUserID: assignedUserID,
+                                   ownerUserID: ownerUser.id,
+                                   assigneeComment: assigneeComment ?? nil)
     }
     
     convenience init(id: Int32,
-                     chore_template_id: Int32,
-                     created_date: Date,
-                     due_date: Date,
-                     done_date: Date? = nil,
-                     approved_date: Date? = nil,
-                     assigned_user_id: Int32? = nil,
-                     owner_user_id: Int32,
-                     assignee_comment: String? = nil,
+                     choreTemplateID: Int32,
+                     createdDate: Date,
+                     dueDate: Date,
+                     doneDate: Date? = nil,
+                     approvedDate: Date? = nil,
+                     assignedUserID: Int32? = nil,
+                     ownerUserID: Int32,
+                     assigneeComment: String? = nil,
                      context: NSManagedObjectContext) {
         
         // Setting up the generic NSManagedObject functionality of the model object
@@ -45,23 +45,35 @@ extension Chore {
         
         // Once we have the clay, we can begin sculpting it into our unique model object
         self.id = id
-        self. = chore_template_id
-        self.created_date = created_date
-        self.name = name
-        self.email_address = email_address
-        self.child = child
-        self.picture = picture
+        self.choreTemplate = nil  //TODO: - Implement ChoreTemplate lookup by ID
+        self.createdDate = createdDate
+        self.dueDate = dueDate
+        self.doneDate = doneDate
+        self.approvedDate = approvedDate
+        self.assignedUser = nil  //TODO: - Implement user lookup by ID
+        self.owner = nil
+        self.assigneeComment = assigneeComment
     }
     
-    @discardableResult convenience init?(userRepresentaion: UserRepresentation, context: NSManagedObjectContext) {
+    @discardableResult convenience init?(choreRepresentaion: ChoreRepresentation, context: NSManagedObjectContext) {
         
-        self.init(id: userRepresentaion.id,
-                  login_name: userRepresentaion.login_name,
-                  password: userRepresentaion.password,
-                  name: userRepresentaion.name,
-                  email_address: userRepresentaion.email_address,
-                  child: userRepresentaion.child,
-                  picture: userRepresentaion.picture,
+        let formatter = ISO8601DateFormatter()
+        guard
+            let createdDate = formatter.date(from: choreRepresentaion.createdDate),
+            let dueDate = formatter.date(from: choreRepresentaion.dueDate)
+        else { return nil}
+        let doneDate = formatter.date(from: choreRepresentaion.doneDate ?? "")
+        let approvedDate = formatter.date(from: choreRepresentaion.approvedDate ?? "")
+        
+        self.init(id: choreRepresentaion.id,
+                  choreTemplateID: choreRepresentaion.choreTemplateID,
+                  createdDate: createdDate,
+                  dueDate: dueDate,
+                  doneDate: doneDate,
+                  approvedDate: approvedDate,
+                  assignedUserID: choreRepresentaion.assignedUserID,
+                  ownerUserID: choreRepresentaion.ownerUserID,
+                  assigneeComment: choreRepresentaion.assigneeComment,
                   context: context)
     }
 }

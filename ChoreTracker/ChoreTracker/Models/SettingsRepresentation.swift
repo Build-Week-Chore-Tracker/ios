@@ -10,6 +10,12 @@ import Foundation
 
 struct SettingsRepresentation {
     let id:             Int
-    let family_picture: String?
-    let week_start_day: String = "Sunday"
+    let familyPicture: String?
+    let weekStartDay: String = "Sunday"
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case familyPicture = "family_picture"
+        case weekStartDay = "week_start_day"
+    }
 }

@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G8030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Chore" representedClassName="Chore" syncable="YES" codeGenerationType="class">
-        <attribute name="approved_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="assignee_comment" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="created_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="done_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="due_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="approvedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="assigneeComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="doneDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="assigned_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="assigned_chores" inverseEntity="User" syncable="YES"/>
-        <relationship name="chore_template" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="chores" inverseEntity="ChoreTemplate" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="owned_chores" inverseEntity="User" syncable="YES"/>
+        <relationship name="assignedUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="assignedChores" inverseEntity="User" syncable="YES"/>
+        <relationship name="choreTemplate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="chores" inverseEntity="ChoreTemplate" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="ownedChores" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="ChoreTemplate" representedClassName="ChoreTemplate" syncable="YES" codeGenerationType="class">
-        <attribute name="chore_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="choreDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="custom" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="period" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="picture_evidence" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="pictureEvidence" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="points" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="assigned_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="chore_template_assignee" inverseEntity="User" syncable="YES"/>
-        <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="chore_template" inverseEntity="Chore" syncable="YES"/>
-        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="chore_templates" inverseEntity="User" syncable="YES"/>
-        <relationship name="parent_template" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="parent_template" inverseEntity="ChoreTemplate" syncable="YES"/>
+        <relationship name="assignedUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="choreTemplateAssignee" inverseEntity="User" syncable="YES"/>
+        <relationship name="chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="choreTemplate" inverseEntity="Chore" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="choreTemplates" inverseEntity="User" syncable="YES"/>
+        <relationship name="parentTemplate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="parentTemplate" inverseEntity="ChoreTemplate" syncable="YES"/>
     </entity>
     <entity name="Points" representedClassName="Points" syncable="YES" codeGenerationType="class">
-        <attribute name="end_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="start_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="total_points" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="totalPoints" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="points" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
-        <attribute name="family_picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="familyPicture" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="week_start_day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="weekStartDay" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="settings" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="child" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="email_address" attributeType="String" syncable="YES"/>
+        <attribute name="emailAddress" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="login_name" attributeType="String" syncable="YES"/>
+        <attribute name="loginName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="password" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="assigned_chores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="assigned_user" inverseEntity="Chore" syncable="YES"/>
+        <relationship name="assignedChores" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chore" inverseName="assignedUser" inverseEntity="Chore" syncable="YES"/>
         <relationship name="children" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="User" inverseName="parent" inverseEntity="User" syncable="YES"/>
-        <relationship name="chore_template_assignee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="assigned_user" inverseEntity="ChoreTemplate" syncable="YES"/>
-        <relationship name="chore_templates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="owner" inverseEntity="ChoreTemplate" syncable="YES"/>
-        <relationship name="owned_chores" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chore" inverseName="owner" inverseEntity="Chore" syncable="YES"/>
+        <relationship name="choreTemplateAssignee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="assignedUser" inverseEntity="ChoreTemplate" syncable="YES"/>
+        <relationship name="choreTemplates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ChoreTemplate" inverseName="owner" inverseEntity="ChoreTemplate" syncable="YES"/>
+        <relationship name="ownedChores" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chore" inverseName="owner" inverseEntity="Chore" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="children" inverseEntity="User" syncable="YES"/>
         <relationship name="points" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Points" inverseName="user" inverseEntity="Points" syncable="YES"/>
         <relationship name="settings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Settings" inverseName="user" inverseEntity="Settings" syncable="YES"/>

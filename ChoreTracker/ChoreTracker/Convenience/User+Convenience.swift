@@ -12,15 +12,15 @@ import CoreData
 extension User {
     
     var userRepresentation: UserRepresentation? {
-        guard   let login_name = login_name,
+        guard   let loginName = loginName,
                 let password = password,
-                let email_address = email_address,
+                let emailAddress = emailAddress,
                 let name = name
                 else {return nil}
-        return UserRepresentation(id: id, login_name: login_name, password: password, name: name, email_address: email_address, parent_id: self.parent?.id ?? nil, picture: picture ?? nil)
+        return UserRepresentation(id: id, loginName: loginName, password: password, name: name, emailAddress: emailAddress, parentID: self.parent?.id ?? nil, picture: picture ?? nil)
     }
     
-    convenience init(id: Int32, login_name: String, password: String, name: String, email_address: String, child: Bool, picture: String? = nil,  context: NSManagedObjectContext) {
+    convenience init(id: Int32, loginName: String, password: String, name: String, emailAddress: String, child: Bool, picture: String? = nil,  context: NSManagedObjectContext) {
         
         // Setting up the generic NSManagedObject functionality of the model object
         // The generic chunk of clay
@@ -28,10 +28,10 @@ extension User {
         
         // Once we have the clay, we can begin sculpting it into our unique model object
         self.id = id
-        self.login_name = login_name
+        self.loginName = loginName
         self.password = password
         self.name = name
-        self.email_address = email_address
+        self.emailAddress = emailAddress
         self.child = child
         self.picture = picture
     }
@@ -39,10 +39,10 @@ extension User {
     @discardableResult convenience init?(userRepresentaion: UserRepresentation, context: NSManagedObjectContext) {
         
         self.init(id: userRepresentaion.id,
-                  login_name: userRepresentaion.login_name,
+                  loginName: userRepresentaion.loginName,
                   password: userRepresentaion.password,
                   name: userRepresentaion.name,
-                  email_address: userRepresentaion.email_address,
+                  emailAddress: userRepresentaion.emailAddress,
                   child: userRepresentaion.child,
                   picture: userRepresentaion.picture,
                   context: context)

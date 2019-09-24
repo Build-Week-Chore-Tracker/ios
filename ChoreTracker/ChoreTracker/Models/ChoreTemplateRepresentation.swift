@@ -13,11 +13,25 @@ struct ChoreTemplateRepresentation {
     let name:               String
     let description:        String
     let period:             String
-    let picture_evidence:   Bool = false
+    let pictureEvidence:   Bool = false
     let points:             Int?
     let custom:             Bool
-    let user_id:            Int32?
-    let parent_template_id: Int32?
+    let userID:            Int32?
+    let parentTemplateID: Int32?
     let notes:              String?
-    let assigned_user_id:   Int32?
+    let assignedUserID:   Int32?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case description
+        case period
+        case pictureEvidence = "picture_evidence"
+        case points
+        case custom
+        case userID = "user_id"
+        case parentTemplateID = "parent_template_id"
+        case notes
+        case assignedUserID = "assigned_user_id"
+    }
 }

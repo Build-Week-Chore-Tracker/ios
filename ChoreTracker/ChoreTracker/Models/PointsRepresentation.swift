@@ -10,8 +10,16 @@ import Foundation
 
 struct PointsRepresentation {
     let id:             Int
-    let user_id:        Int
-    let start_date:     String
-    let end_date:       String
-    let total_points:   Int
+    let userID:        Int
+    let startDate:     String
+    let endDate:       String
+    let totalPoints:   Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userID = "user_id"
+        case startDate = "start_date"
+        case endDate = "end_date"
+        case totalPoints = "total_points"
+    }
 }
