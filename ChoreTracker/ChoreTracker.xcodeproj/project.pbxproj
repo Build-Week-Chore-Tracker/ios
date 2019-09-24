@@ -9,10 +9,20 @@
 /* Begin PBXBuildFile section */
 		DD3E5977233A6A7F00F4FD0C /* ChildDBTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */; };
 		DD3E5979233A6BD700F4FD0C /* AdultChildTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */; };
-		DD3E597B233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */; };
-		DD3E597D233A787B00F4FD0C /* AdultChildSideDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */; };
+		DD3E597B233A77AE00F4FD0C /* AdultChoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597A233A77AE00F4FD0C /* AdultChoreDetail.storyboard */; };
+		DD3E597D233A787B00F4FD0C /* AdultChildDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597C233A787B00F4FD0C /* AdultChildDetail.storyboard */; };
 		DD3E597F233A796F00F4FD0C /* ChildDBPoints.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */; };
 		DD3E5981233A79C700F4FD0C /* ChildDBChoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */; };
+		DD3E5983233A7D3900F4FD0C /* AdultChoreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */; };
+		DD3E5985233A7DC800F4FD0C /* AdultChoreDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */; };
+		DD3E5987233A7EA300F4FD0C /* AdultChildTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */; };
+		DD3E5989233A7EF300F4FD0C /* AdultChildDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */; };
+		DD3E598B233A7F6C00F4FD0C /* AdultChoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */; };
+		DD3E598D233A7FB900F4FD0C /* AdultChildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */; };
+		DD3E598F233A82E700F4FD0C /* ChildTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */; };
+		DD3E5991233A83D500F4FD0C /* ChildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5990233A83D500F4FD0C /* ChildViewCell.swift */; };
+		DD3E5993233A846200F4FD0C /* ChildChoreDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5992233A846200F4FD0C /* ChildChoreDetailVC.swift */; };
+		DD3E5995233A84B400F4FD0C /* ChildPointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5994233A84B400F4FD0C /* ChildPointsVC.swift */; };
 		DD45E4F823397B80005174FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD45E4F723397B80005174FD /* Login.storyboard */; };
 		DD45E4FA23397C2A005174FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45E4F923397C2A005174FD /* LoginViewController.swift */; };
 		E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3952338130E0038E55A /* AppDelegate.swift */; };
@@ -29,10 +39,20 @@
 /* Begin PBXFileReference section */
 		DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBTableView.storyboard; sourceTree = "<group>"; };
 		DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChildTableView.storyboard; sourceTree = "<group>"; };
-		DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChoreSideDetail.storyboard; sourceTree = "<group>"; };
-		DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChildSideDetail.storyboard; sourceTree = "<group>"; };
+		DD3E597A233A77AE00F4FD0C /* AdultChoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChoreDetail.storyboard; sourceTree = "<group>"; };
+		DD3E597C233A787B00F4FD0C /* AdultChildDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChildDetail.storyboard; sourceTree = "<group>"; };
 		DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBPoints.storyboard; sourceTree = "<group>"; };
 		DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBChoreDetail.storyboard; sourceTree = "<group>"; };
+		DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreTableVC.swift; sourceTree = "<group>"; };
+		DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreDetailVC.swift; sourceTree = "<group>"; };
+		DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildTableVC.swift; sourceTree = "<group>"; };
+		DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildDetailVC.swift; sourceTree = "<group>"; };
+		DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreViewCell.swift; sourceTree = "<group>"; };
+		DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildViewCell.swift; sourceTree = "<group>"; };
+		DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableVC.swift; sourceTree = "<group>"; };
+		DD3E5990233A83D500F4FD0C /* ChildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewCell.swift; sourceTree = "<group>"; };
+		DD3E5992233A846200F4FD0C /* ChildChoreDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildChoreDetailVC.swift; sourceTree = "<group>"; };
+		DD3E5994233A84B400F4FD0C /* ChildPointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPointsVC.swift; sourceTree = "<group>"; };
 		DD45E4F723397B80005174FD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		DD45E4F923397C2A005174FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0A7F3922338130E0038E55A /* ChoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +148,16 @@
 			children = (
 				DD45E4F923397C2A005174FD /* LoginViewController.swift */,
 				E0A7F3972338130E0038E55A /* ViewController.swift */,
+				DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */,
+				DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */,
+				DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */,
+				DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */,
+				DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */,
+				DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */,
+				DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */,
+				DD3E5990233A83D500F4FD0C /* ChildViewCell.swift */,
+				DD3E5992233A846200F4FD0C /* ChildChoreDetailVC.swift */,
+				DD3E5994233A84B400F4FD0C /* ChildPointsVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -135,13 +165,13 @@
 		E0A7F3AC2338138A0038E55A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */,
+				DD3E597A233A77AE00F4FD0C /* AdultChoreDetail.storyboard */,
+				E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */,
 				DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */,
-				DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */,
+				DD3E597C233A787B00F4FD0C /* AdultChildDetail.storyboard */,
 				DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */,
 				DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */,
 				DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */,
-				E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */,
 				E0A7F39E233813110038E55A /* LaunchScreen.storyboard */,
 				DD45E4F723397B80005174FD /* Login.storyboard */,
 			);
@@ -213,9 +243,9 @@
 				DD3E5979233A6BD700F4FD0C /* AdultChildTableView.storyboard in Resources */,
 				E0A7F3A0233813110038E55A /* LaunchScreen.storyboard in Resources */,
 				E0A7F39D233813110038E55A /* Assets.xcassets in Resources */,
-				DD3E597D233A787B00F4FD0C /* AdultChildSideDetail.storyboard in Resources */,
+				DD3E597D233A787B00F4FD0C /* AdultChildDetail.storyboard in Resources */,
 				E0A7F39B2338130E0038E55A /* AdultChoreTableView.storyboard in Resources */,
-				DD3E597B233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard in Resources */,
+				DD3E597B233A77AE00F4FD0C /* AdultChoreDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,13 +256,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3E5985233A7DC800F4FD0C /* AdultChoreDetailVC.swift in Sources */,
+				DD3E5987233A7EA300F4FD0C /* AdultChildTableVC.swift in Sources */,
+				DD3E5983233A7D3900F4FD0C /* AdultChoreTableVC.swift in Sources */,
 				DD45E4FA23397C2A005174FD /* LoginViewController.swift in Sources */,
+				DD3E5993233A846200F4FD0C /* ChildChoreDetailVC.swift in Sources */,
 				E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */,
 				E0A7F3B423384BD40038E55A /* Networking.swift in Sources */,
+				DD3E598F233A82E700F4FD0C /* ChildTableVC.swift in Sources */,
 				E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */,
 				E0A7F3B1233849AB0038E55A /* UserPreferences.swift in Sources */,
+				DD3E598D233A7FB900F4FD0C /* AdultChildViewCell.swift in Sources */,
 				E0A7F3982338130E0038E55A /* ViewController.swift in Sources */,
+				DD3E598B233A7F6C00F4FD0C /* AdultChoreViewCell.swift in Sources */,
 				E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */,
+				DD3E5995233A84B400F4FD0C /* ChildPointsVC.swift in Sources */,
+				DD3E5989233A7EF300F4FD0C /* AdultChildDetailVC.swift in Sources */,
+				DD3E5991233A83D500F4FD0C /* ChildViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

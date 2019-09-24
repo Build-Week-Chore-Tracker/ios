@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="410" y="270"/>
         </scene>
-        <!--Main-->
+        <!--AdultChoreTableView-->
         <scene sceneID="4VI-Ix-ByF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="DtL-XL-tCA" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AdultChoreTableView" id="DtL-XL-tCA" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2y-WA-rHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="186" y="-211"/>
