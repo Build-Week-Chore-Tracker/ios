@@ -9,8 +9,9 @@
 import Foundation
 
 
-let coreDataModelName: String = "ChoreTracker"
-let baseURL = URL(string: "https://choretracker-c064c.firebaseio.com/")!
+let coreDataModelName: String   = "ChoreTracker"
+let baseURL: URL                = URL(string: "https://choretracker-c064c.firebaseio.com/")!
+let useAPI: Bool                = false
 
 enum AppError: Error {
     case objectToRepFailed

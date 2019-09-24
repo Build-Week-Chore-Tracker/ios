@@ -24,7 +24,6 @@ extension Points {
     }
     
     convenience init(id: Int32,
-                     userID: Int32,
                      startDate: Date,
                      endDate: Date,
                      totalPoints: Int32,
@@ -36,7 +35,6 @@ extension Points {
         
         // Once we have the clay, we can begin sculpting it into our unique model object
         self.id = id
-        self.userID = userID
         self.startDate = startDate
         self.endDate = endDate
         self.totalPoints = totalPoints
@@ -50,10 +48,7 @@ extension Points {
             let endDate = formatter.date(from: pointsRepresentaion.endDate)
             else { return nil}
         
-        //TODO: - Get User object from ID
-        
         self.init(id: pointsRepresentaion.id,
-                  userID: nil,
                   startDate: startDate,
                   endDate: endDate,
                   totalPoints: pointsRepresentaion.totalPoints,
