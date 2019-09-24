@@ -62,6 +62,11 @@ extension ChoreTemplate {
     }
     
     @discardableResult convenience init?(choreTemplateRepresentaion: ChoreTemplateRepresentation, context: NSManagedObjectContext) {
+        guard   let ownerID = choreTemplateRepresentaion.userID,
+                let owner = UserController.shared.getUser(from: ownerID),
+                let assignedID = choreTemplateRepresentaion.assignedUserID,
+                let assigned = UserController.shared.getUser(from: assignedID)
+        else { return nil }
         
         self.init(id: choreTemplateRepresentaion.id,
                   name: choreTemplateRepresentaion.name,
@@ -70,13 +75,11 @@ extension ChoreTemplate {
                   pictureEvidence: choreTemplateRepresentaion.pictureEvidence,
                   points: choreTemplateRepresentaion.points,
                   custom: choreTemplateRepresentaion.custom,
-                  //TODO: - Get User from ID
-                  //owner: nil,
-                  notes: choreTemplateRepresentaion.notes,
+                  owner: owner,
+                  notes: choreTemplateRepresentaion.notes ?? "",
                   //TODO: - Get ChoreTemplate from ID
-                  //parentTemplate: ChoreTemplate?,
-                  //TODO: - Get User from ID
-                  //assignedUser: User?,
-                  context: NSManagedObjectContext)
+                  parentTemplate: nil,
+                  assignedUser: assigned,
+                  context: context)
     }
 }
