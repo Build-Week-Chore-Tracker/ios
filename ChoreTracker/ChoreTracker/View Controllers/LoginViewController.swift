@@ -10,6 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+	// MARK: - Properties
+
+
+
+	// MARK: - IBOutlets
+	
 	@IBOutlet weak var parentSegmentControl: UISegmentedControl!
 	@IBOutlet weak var loginSegmentControl: UISegmentedControl!
 	@IBOutlet weak var signupLoginLabel: UILabel!
