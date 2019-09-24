@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHd-1Y-A1X">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chores Detail-->
+        <scene sceneID="zMl-aX-hNp">
+            <objects>
+                <viewController title="Chores Detail" id="OHd-1Y-A1X" customClass="AdultChoreDetailVC" customModule="ChoreTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uMC-K3-z1D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chores Side Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COC-g6-PHc">
+                                <rect key="frame" x="30" y="104" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2WY-W4-dVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="COC-g6-PHc" firstAttribute="leading" secondItem="DyE-gH-RiF" secondAttribute="leading" constant="30" id="6yc-F8-wka"/>
+                            <constraint firstItem="DyE-gH-RiF" firstAttribute="trailing" secondItem="COC-g6-PHc" secondAttribute="trailing" constant="30" id="he1-zh-jNK"/>
+                            <constraint firstItem="COC-g6-PHc" firstAttribute="top" secondItem="DyE-gH-RiF" secondAttribute="top" constant="60" id="upl-ZK-ngD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DyE-gH-RiF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2s0-dL-yRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4630" y="122"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AMa-op-zql">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chores Side-->
+        <scene sceneID="h8V-jv-fz6">
+            <objects>
+                <tableViewController title="Chores Side" id="Zr2-on-fBM" customClass="AdultChoreTableViewController" customModule="ChoreTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7SO-UD-rQB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1DR-bM-59Q" customClass="adultchoreviewcell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1DR-bM-59Q" id="MSk-yt-Ffl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Zr2-on-fBM" id="wTP-cT-QhK"/>
+                            <outlet property="delegate" destination="Zr2-on-fBM" id="IzM-Rq-tHM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Chores" id="oCX-qw-en0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DdF-jQ-Gar">
+                            <connections>
+                                <segue destination="WmF-kd-nB6" kind="presentation" id="NdF-fJ-Aa5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qNm-UI-qCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="117"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="CEt-IS-ctT">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="AMa-op-zql" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lBE-XG-n3r">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="img-BQ-xQR" kind="relationship" relationship="viewControllers" id="bD3-nN-7Za"/>
+                        <segue destination="dg5-zY-PLf" kind="relationship" relationship="viewControllers" id="4BK-rh-srn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pp-0V-aNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="117"/>
+        </scene>
+        <!--Chores-->
+        <scene sceneID="Shc-00-oo1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dg5-zY-PLf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chores" id="CfA-T4-2oJ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1Yt-PN-rdd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zr2-on-fBM" kind="relationship" relationship="rootViewController" id="U3J-bC-Xl6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rr4-f1-uvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="117"/>
+        </scene>
+        <!--AdultChildTableView-->
+        <scene sceneID="bYc-Sj-qRh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdultChildTableView" id="img-BQ-xQR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="GQw-hE-nQC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTJ-N8-yM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="-612"/>
+        </scene>
+        <!--AdultChoreDetail-->
+        <scene sceneID="CU0-ba-dgz">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AdultChoreDetail" id="WmF-kd-nB6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVH-fs-M81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4630" y="122"/>
+        </scene>
+    </scenes>
+</document>
