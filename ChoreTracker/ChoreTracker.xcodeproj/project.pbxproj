@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD3E5977233A6A7F00F4FD0C /* ChildDBTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */; };
+		DD3E5979233A6BD700F4FD0C /* AdultChildTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */; };
+		DD3E597B233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */; };
+		DD3E597D233A787B00F4FD0C /* AdultChildSideDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */; };
+		DD3E597F233A796F00F4FD0C /* ChildDBPoints.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */; };
+		DD3E5981233A79C700F4FD0C /* ChildDBChoreDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */; };
+		DD45E4F823397B80005174FD /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD45E4F723397B80005174FD /* Login.storyboard */; };
+		DD45E4FA23397C2A005174FD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD45E4F923397C2A005174FD /* LoginViewController.swift */; };
 		E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3952338130E0038E55A /* AppDelegate.swift */; };
 		E0A7F3982338130E0038E55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3972338130E0038E55A /* ViewController.swift */; };
-		E0A7F39B2338130E0038E55A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F3992338130E0038E55A /* Main.storyboard */; };
+		E0A7F39B2338130E0038E55A /* AdultChoreTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */; };
 		E0A7F39D233813110038E55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F39C233813110038E55A /* Assets.xcassets */; };
 		E0A7F3A0233813110038E55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F39E233813110038E55A /* LaunchScreen.storyboard */; };
 		E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3AD233813BD0038E55A /* ChoreTracker.xcdatamodeld */; };
@@ -19,10 +27,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBTableView.storyboard; sourceTree = "<group>"; };
+		DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChildTableView.storyboard; sourceTree = "<group>"; };
+		DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChoreSideDetail.storyboard; sourceTree = "<group>"; };
+		DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AdultChildSideDetail.storyboard; sourceTree = "<group>"; };
+		DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBPoints.storyboard; sourceTree = "<group>"; };
+		DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChildDBChoreDetail.storyboard; sourceTree = "<group>"; };
+		DD45E4F723397B80005174FD /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		DD45E4F923397C2A005174FD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E0A7F3922338130E0038E55A /* ChoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A7F3952338130E0038E55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0A7F3972338130E0038E55A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E0A7F39A2338130E0038E55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0A7F39A2338130E0038E55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdultChoreTableView.storyboard; sourceTree = "<group>"; };
 		E0A7F39C233813110038E55A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0A7F39F233813110038E55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A7F3A1233813110038E55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -65,7 +81,7 @@
 				E0A7F3A8233813330038E55A /* Model Controllers */,
 				E0A7F3A72338132D0038E55A /* Models */,
 				E0A7F3A92338134E0038E55A /* Resources */,
-				E0A7F3AC2338138A0038E55A /* Story Boards */,
+				E0A7F3AC2338138A0038E55A /* Storyboards */,
 				E0A7F3AB2338136D0038E55A /* View Controllers */,
 				E0A7F3AA233813660038E55A /* Views */,
 			);
@@ -110,18 +126,26 @@
 		E0A7F3AB2338136D0038E55A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DD45E4F923397C2A005174FD /* LoginViewController.swift */,
 				E0A7F3972338130E0038E55A /* ViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		E0A7F3AC2338138A0038E55A /* Story Boards */ = {
+		E0A7F3AC2338138A0038E55A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				E0A7F3992338130E0038E55A /* Main.storyboard */,
+				DD3E597A233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard */,
+				DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */,
+				DD3E597C233A787B00F4FD0C /* AdultChildSideDetail.storyboard */,
+				DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */,
+				DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */,
+				DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */,
+				E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */,
 				E0A7F39E233813110038E55A /* LaunchScreen.storyboard */,
+				DD45E4F723397B80005174FD /* Login.storyboard */,
 			);
-			path = "Story Boards";
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +206,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD3E5981233A79C700F4FD0C /* ChildDBChoreDetail.storyboard in Resources */,
+				DD3E597F233A796F00F4FD0C /* ChildDBPoints.storyboard in Resources */,
+				DD45E4F823397B80005174FD /* Login.storyboard in Resources */,
+				DD3E5977233A6A7F00F4FD0C /* ChildDBTableView.storyboard in Resources */,
+				DD3E5979233A6BD700F4FD0C /* AdultChildTableView.storyboard in Resources */,
 				E0A7F3A0233813110038E55A /* LaunchScreen.storyboard in Resources */,
 				E0A7F39D233813110038E55A /* Assets.xcassets in Resources */,
-				E0A7F39B2338130E0038E55A /* Main.storyboard in Resources */,
+				DD3E597D233A787B00F4FD0C /* AdultChildSideDetail.storyboard in Resources */,
+				E0A7F39B2338130E0038E55A /* AdultChoreTableView.storyboard in Resources */,
+				DD3E597B233A77AE00F4FD0C /* AdultChoreSideDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD45E4FA23397C2A005174FD /* LoginViewController.swift in Sources */,
 				E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */,
 				E0A7F3B423384BD40038E55A /* Networking.swift in Sources */,
 				E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */,
@@ -207,12 +239,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E0A7F3992338130E0038E55A /* Main.storyboard */ = {
+		E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E0A7F39A2338130E0038E55A /* Base */,
 			);
-			name = Main.storyboard;
+			name = AdultChoreTableView.storyboard;
 			sourceTree = "<group>";
 		};
 		E0A7F39E233813110038E55A /* LaunchScreen.storyboard */ = {
@@ -347,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T87Y8KB3R4;
 				INFOPLIST_FILE = "$(SRCROOT)/ChoreTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T87Y8KB3R4;
 				INFOPLIST_FILE = "$(SRCROOT)/ChoreTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
