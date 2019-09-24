@@ -139,6 +139,9 @@
 		E0A7F3AA233813660038E55A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DD3E5990233A83D500F4FD0C /* ChildViewCell.swift */,
+				DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */,
+				DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,10 +155,7 @@
 				DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */,
 				DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */,
 				DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */,
-				DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */,
-				DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */,
 				DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */,
-				DD3E5990233A83D500F4FD0C /* ChildViewCell.swift */,
 				DD3E5992233A846200F4FD0C /* ChildChoreDetailVC.swift */,
 				DD3E5994233A84B400F4FD0C /* ChildPointsVC.swift */,
 			);
@@ -165,15 +165,15 @@
 		E0A7F3AC2338138A0038E55A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				DD3E597A233A77AE00F4FD0C /* AdultChoreDetail.storyboard */,
+				DD45E4F723397B80005174FD /* Login.storyboard */,
 				E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */,
 				DD3E5978233A6BD700F4FD0C /* AdultChildTableView.storyboard */,
+				DD3E597A233A77AE00F4FD0C /* AdultChoreDetail.storyboard */,
 				DD3E597C233A787B00F4FD0C /* AdultChildDetail.storyboard */,
 				DD3E5976233A6A7F00F4FD0C /* ChildDBTableView.storyboard */,
 				DD3E5980233A79C700F4FD0C /* ChildDBChoreDetail.storyboard */,
 				DD3E597E233A796F00F4FD0C /* ChildDBPoints.storyboard */,
 				E0A7F39E233813110038E55A /* LaunchScreen.storyboard */,
-				DD45E4F723397B80005174FD /* Login.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
