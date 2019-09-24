@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct SettingsRepresentation {
-    let id:             Int
-    let familyPicture: String?
-    let weekStartDay: String = "Sunday"
+struct SettingsRepresentation: Codable, Equatable {
+    let id:             Int32
+    let familyPicture:  String?
+    let weekStartDay:   String
     
     enum CodingKeys: String, CodingKey {
         case id

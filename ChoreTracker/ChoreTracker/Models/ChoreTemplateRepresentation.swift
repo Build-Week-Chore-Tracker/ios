@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct ChoreTemplateRepresentation {
+struct ChoreTemplateRepresentation: Codable, Equatable {
     let id:                 Int32
     let name:               String
     let description:        String
     let period:             String
-    let pictureEvidence:   Bool = false
-    let points:             Int?
+    let pictureEvidence:    Bool
+    let points:             Int32?
     let custom:             Bool
-    let userID:            Int32?
-    let parentTemplateID: Int32?
+    let userID:             Int32?
+    let parentTemplateID:   Int32?
     let notes:              String?
-    let assignedUserID:   Int32?
+    let assignedUserID:     Int32?
     
     enum CodingKeys: String, CodingKey {
         case id

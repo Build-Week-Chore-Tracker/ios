@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct PointsRepresentation {
-    let id:             Int
-    let userID:        Int
+struct PointsRepresentation: Codable, Equatable {
+    let id:            Int32
+    let userID:        Int32
     let startDate:     String
     let endDate:       String
-    let totalPoints:   Int
+    let totalPoints:   Int32
     
     enum CodingKeys: String, CodingKey {
         case id

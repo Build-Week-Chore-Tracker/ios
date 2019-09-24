@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ChoreRepresentation {
+struct ChoreRepresentation: Codable, Equatable {
     let id:                 Int32
     let choreTemplateID:    Int32
     let createdDate:        String
