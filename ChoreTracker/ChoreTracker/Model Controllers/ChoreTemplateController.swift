@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+enum Period {
+	case daily
+	case weekly
+	case monthly
+}
+
 class ChoreTemplateController {
     
     static let shared = ChoreTemplateController()
@@ -22,26 +28,40 @@ class ChoreTemplateController {
         completion()
     }
     
-    @discardableResult func create(id: Int32, name: String, choreDescription: String, period: String, pictureEvidence: Bool, points: Int32, custom: Bool, owner: User, notes: String, parentTemplate: ChoreTemplate?, assignedUser: User?) -> ChoreTemplate {
+    @discardableResult func create(id: Int32,
+								   name: String,
+								   choreDescription: String,
+								   period: String,
+								   pictureEvidence: Bool,
+								   points: Int32,
+								   custom: Bool,
+								   owner: User,
+								   notes: String,
+								   parentTemplate: ChoreTemplate?,
+								   assignedUser: User?) -> ChoreTemplate {
         let choreTemplate = ChoreTemplate(id: id, name: name, choreDescription: choreDescription, period: period, pictureEvidence: pictureEvidence, points: points, custom: custom, owner: owner, notes: notes, parentTemplate: parentTemplate, assignedUser: assignedUser, context:  CoreDataStack.shared.mainContext)
         CoreDataStack.shared.save()
-        //put(representation: user.userRepresentation)
+        //put(choreTemplate: choreTemplate!)
         return choreTemplate
     }
     
-    func update(user: User, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) {
-        user.name = name
-        user.loginName = loginName
-        user.password = password
-        user.emailAddress = emailAddress
-        user.child = child
-        user.picture = picture
-        CoreDataStack.shared.save()
-        //put(representation: user.userRepresentation)
+	func update(choreTemplate: ChoreTemplate, name: String, choreDescription: String, period: String, pictureEvidence: Bool, points: Int32, custom: Bool,  owner: User, notes: String, parentTemplate: ChoreTemplate?, assignedUser: User?) {
+			choreTemplate.name = name
+			choreTemplate.choreDescription = choreDescription
+			choreTemplate.period = period
+			choreTemplate.pictureEvidence = pictureEvidence
+			choreTemplate.points = points
+			choreTemplate.custom = custom
+			choreTemplate.owner = owner
+			choreTemplate.notes = notes
+			choreTemplate.parentTemplate = parentTemplate
+			choreTemplate.assignedUser = assignedUser
+			CoreDataStack.shared.save()
+			//put(representation: user.userRepresentation)
     }
     
-    func delete(user: User) {
-        CoreDataStack.shared.mainContext.delete(user)
+	func delete(choreTemplate: ChoreTemplate) {
+        CoreDataStack.shared.mainContext.delete(choreTemplate)
         CoreDataStack.shared.save()
         //Implement delete from Firebase?
     }
