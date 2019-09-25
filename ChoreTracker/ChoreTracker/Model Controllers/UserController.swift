@@ -148,10 +148,12 @@ class UserController {
         }
     }
     
-    //TODO: Add period to call
-    func getUserStats(with user: User) -> [String:Int] {
-        let nowDate:Date = Date()
-        let startDate:Date = Date()
+    //TODO: Finish this out
+    func getUserStats(with user: User, preiod: Period = Period.weekly) -> [String:Int] {
+        
+        let startDate:Date = Date.today().previous(.monday)
+        let endDate: Date = Date.today().next(.sunday)
+        let dateRange = startDate...endDate
         //Get assigned chores count
         let context = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()

@@ -16,7 +16,6 @@
 		DD3E5983233A7D3900F4FD0C /* AdultChoreTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */; };
 		DD3E5985233A7DC800F4FD0C /* AdultChoreDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */; };
 		DD3E5987233A7EA300F4FD0C /* AdultChildTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */; };
-		DD3E5989233A7EF300F4FD0C /* AdultChildDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */; };
 		DD3E598B233A7F6C00F4FD0C /* AdultChoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */; };
 		DD3E598D233A7FB900F4FD0C /* AdultChildViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */; };
 		DD3E598F233A82E700F4FD0C /* ChildTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */; };
@@ -29,6 +28,7 @@
 		E07A5190233A6C0D00C84B26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A518F233A6C0D00C84B26 /* Constants.swift */; };
 		E07A5192233B13B900C84B26 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A5191233B13B900C84B26 /* Alert.swift */; };
 		E07A5194233B19F700C84B26 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A5193233B19F700C84B26 /* ErrorHandling.swift */; };
+		E07A5196233C164700C84B26 /* AdultChildDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A5195233C164700C84B26 /* AdultChildDetailVC.swift */; };
 		E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3952338130E0038E55A /* AppDelegate.swift */; };
 		E0A7F3982338130E0038E55A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3972338130E0038E55A /* ViewController.swift */; };
 		E0A7F39B2338130E0038E55A /* AdultChoreTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F3992338130E0038E55A /* AdultChoreTableView.storyboard */; };
@@ -67,7 +67,6 @@
 		DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreTableVC.swift; sourceTree = "<group>"; };
 		DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreDetailVC.swift; sourceTree = "<group>"; };
 		DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildTableVC.swift; sourceTree = "<group>"; };
-		DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildDetailVC.swift; sourceTree = "<group>"; };
 		DD3E598A233A7F6C00F4FD0C /* AdultChoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreViewCell.swift; sourceTree = "<group>"; };
 		DD3E598C233A7FB900F4FD0C /* AdultChildViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildViewCell.swift; sourceTree = "<group>"; };
 		DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableVC.swift; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		E07A518F233A6C0D00C84B26 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E07A5191233B13B900C84B26 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		E07A5193233B19F700C84B26 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		E07A5195233C164700C84B26 /* AdultChildDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChildDetailVC.swift; sourceTree = "<group>"; };
 		E0A7F3922338130E0038E55A /* ChoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0A7F3952338130E0038E55A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0A7F3972338130E0038E55A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		E0A7F3AB2338136D0038E55A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DD3E5988233A7EF300F4FD0C /* AdultChildDetailVC.swift */,
+				E07A5195233C164700C84B26 /* AdultChildDetailVC.swift */,
 				DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */,
 				DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */,
 				DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */,
@@ -362,8 +362,8 @@
 				E0A7F3962338130E0038E55A /* AppDelegate.swift in Sources */,
 				E0A7F3C723396DAB0038E55A /* ChoreTemplate+Convenience.swift in Sources */,
 				E07A5190233A6C0D00C84B26 /* Constants.swift in Sources */,
+				E07A5196233C164700C84B26 /* AdultChildDetailVC.swift in Sources */,
 				DD3E5995233A84B400F4FD0C /* ChildPointsVC.swift in Sources */,
-				DD3E5989233A7EF300F4FD0C /* AdultChildDetailVC.swift in Sources */,
 				DD3E5991233A83D500F4FD0C /* ChildViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
