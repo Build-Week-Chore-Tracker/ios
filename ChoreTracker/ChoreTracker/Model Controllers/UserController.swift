@@ -23,7 +23,7 @@ class UserController {
         completion()
     }
     
-    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) throws -> User? {
+    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String? = nil) throws -> User? {
         guard uniqueLoginName(loginName: loginName) else
         {
             throw (AppError.nameNotUnique)
@@ -48,7 +48,7 @@ class UserController {
         return unique
     }
     
-    func update(user: User, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) {
+    func update(user: User, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String? = nil) {
         user.name = name
         user.loginName = loginName
         user.password = password
@@ -112,7 +112,7 @@ class UserController {
     @discardableResult func register(loginName: String,
                                      password: String,
                                      name: String,
-                                     emailAddress: String,
+                                     emailAddress: String?,
                                      child: Bool) throws -> User?
     {
         var user: User?
