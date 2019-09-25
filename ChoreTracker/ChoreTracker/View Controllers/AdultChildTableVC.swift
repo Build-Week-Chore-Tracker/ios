@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class AdultChildTableVC: UITableViewController {
+    
+//    lazy var fetchResultsController: NSFetchedResultsController<User> = {
+//        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "mood", ascending: true)]
+//        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "mood", cacheName: nil)
+//        frc.delegate = self
+//        do { try frc.performFetch() } catch { fatalError("NSFetchedResultsController failed: \(error)") }
+//        return frc
+//    }()
 
+    @IBAction func unwindToTableView(segue: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

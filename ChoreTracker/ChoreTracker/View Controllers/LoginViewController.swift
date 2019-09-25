@@ -98,7 +98,7 @@ class LoginViewController: UIViewController {
             }
             //Do registration
             do {
-                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: false)
+                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: false, picture: nil)
                 //Success, message user
                 login = true
                 updateViews()
