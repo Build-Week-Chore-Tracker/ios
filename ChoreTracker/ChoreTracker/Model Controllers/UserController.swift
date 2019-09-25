@@ -148,6 +148,29 @@ class UserController {
         }
     }
     
+    //TODO: Add period to call
+    func getUserStats(with user: User) -> [String:Int] {
+        let nowDate:Date = Date()
+        let startDate:Date = Date()
+        //Get assigned chores count
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+        do {
+            //fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+            let chores = try context.fetch(fetchRequest)
+            //return users[0]
+        } catch {
+            //return nil
+        }
+        //Get done chore count
+        //Get needs approval chore count
+        //get total points for period
+        
+        
+        
+        return [:]
+    }
+    
     //MARK: - JSON API code
     let objectType: String = "User"
     
