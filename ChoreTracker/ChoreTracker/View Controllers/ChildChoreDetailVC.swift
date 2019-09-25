@@ -10,12 +10,24 @@ import UIKit
 
 class ChildChoreDetailVC: UIViewController {
 
+	@IBOutlet weak var choreLabel: UILabel!
+	@IBOutlet weak var dueDateLabel: UILabel!
+	@IBOutlet weak var descriptionLabel: UILabel!
+	@IBOutlet weak var pointsLabel: UILabel!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+
+
+	@IBAction func completedToggle(_ sender: Any) {
+
+
+	}
 
     /*
     // MARK: - Navigation

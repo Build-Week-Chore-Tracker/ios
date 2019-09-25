@@ -10,6 +10,11 @@ import UIKit
 
 class ChildTableVC: UITableViewController {
 
+	@IBOutlet weak var choreLabel: UILabel!
+	@IBOutlet weak var dueDateLabel: UILabel!
+	@IBOutlet weak var pointsLabel: UILabel!
+	
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
