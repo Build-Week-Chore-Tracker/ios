@@ -14,13 +14,14 @@ extension Chore {
     var choreRepresentation: ChoreRepresentation? {
         guard   let choreTemplateID = self.choreTemplate?.id,
                 let createdDate = createdDate,
-                let ownerUser = self.owner
+                let ownerUser = self.owner,
+                let dueDate = dueDate?.iso8601()
                 else { return nil }
         let assignedUserID = assignedUser?.id ?? nil
         return  ChoreRepresentation(id: id,
                                    choreTemplateID: choreTemplateID,
                                    createdDate: createdDate.iso8601(),
-                                   dueDate: dueDate?.iso8601() ?? "",
+                                   dueDate:  dueDate,
                                    doneDate: doneDate?.iso8601(),
                                    approvedDate: approvedDate?.iso8601(),
                                    assignedUserID: assignedUserID,
@@ -50,7 +51,11 @@ extension Chore {
         self.dueDate = dueDate
         self.doneDate = doneDate
         self.approvedDate = approvedDate
-        self.assignedUser = nil  //TODO: - Implement user lookup by ID
+        if assignedUser != nil {
+            self.assignedUser = UserController.shared.getUser(from: assignedUserID!)
+        } else {
+            self.assignedUser = nil
+        }
         self.owner = nil
         self.assigneeComment = assigneeComment
     }

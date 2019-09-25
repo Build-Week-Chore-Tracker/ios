@@ -12,7 +12,7 @@ import CoreData
 class UserController {
     
     static let shared = UserController()
-    var currentUser: User?
+    static var currentUser: User?
     
     init() {
         //fetchUsersFromServer()
@@ -23,11 +23,29 @@ class UserController {
         completion()
     }
     
-    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) -> User {
-        let user = User(id: id,loginName: name, password: loginName, name: password, emailAddress: emailAddress,child: child, picture: picture, context: CoreDataStack.shared.mainContext)
+    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) throws -> User? {
+        guard uniqueLoginName(loginName: loginName) else
+        {
+            throw (AppError.nameNotUnique)
+        }
+        let user = User(id: id,loginName: loginName, password: password, name: name, emailAddress: emailAddress,child: child, picture: picture, context: CoreDataStack.shared.mainContext)
         CoreDataStack.shared.save()
         //put(representation: user.userRepresentation)
         return user
+    }
+    
+    func uniqueLoginName (loginName: String) -> Bool {
+        var unique: Bool = false
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(value: true)
+        do {
+            let loginNames = try context.fetch(fetchRequest).map({$0.loginName})
+            unique = !loginNames.contains(loginName)
+        } catch {
+            NSLog("uniqueLoginName: Error fetching users")
+        }
+        return unique
     }
     
     func update(user: User, name: String, loginName: String, password: String, emailAddress: String, child: Bool, picture: String? = nil) {
@@ -55,13 +73,14 @@ class UserController {
             let context = CoreDataStack.shared.mainContext
             let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
             do {
-                fetchRequest.predicate = NSPredicate(format: "loginName = %@", loginName)
+                fetchRequest.predicate = NSPredicate(format: "loginName == %@", loginName)
                 let users = try context.fetch(fetchRequest)
                 if users[0].password ?? "" == password {
-                    currentUser = users[0]
+                    UserController.currentUser = users[0]
                     return true
                 } else {
                     NSLog("Error loggin in with local DB, password did not match.")
+                    return false
                 }
             } catch {
                 NSLog("Error fetching user(s) with loginName: \(error)")
@@ -90,14 +109,26 @@ class UserController {
         return idNumber
     }
     
-    func register(loginName: String, password: String, name: String, emailAddress: String, child: Bool) -> User? {
+    @discardableResult func register(loginName: String,
+                                     password: String,
+                                     name: String,
+                                     emailAddress: String,
+                                     child: Bool) throws -> User?
+    {
+        var user: User?
         if useAPI {
             //TODO: - Do Network call and get and save token
         } else {
             //Mock up with local DB
-            guard let id = getNextID() else { return nil}
-            let user = create(id: id, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: child)
-            return user
+            guard let id = getNextID() else { return nil }
+            if debuging { print ("User Register: ID = \(id)") }
+            do {
+                user =  try create(id: id, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: child)
+                if debuging { print ("User Register: user created = \(String(describing: user))") }
+                return user
+            } catch {
+                throw error
+            }
         }
         return nil
     }
