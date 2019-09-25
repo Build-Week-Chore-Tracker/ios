@@ -20,7 +20,7 @@ extension User {
         return UserRepresentation(id: id, loginName: loginName, password: password, name: name, emailAddress: emailAddress, parentID: self.parent?.id ?? nil, picture: picture ?? nil)
     }
     
-    convenience init(id: Int32, loginName: String, password: String, name: String, emailAddress: String, child: Bool, picture: String? = nil,  context: NSManagedObjectContext) {
+    convenience init(id: Int32, loginName: String, password: String, name: String, emailAddress: String?, child: Bool, picture: String? = nil,  context: NSManagedObjectContext) {
         
         // Setting up the generic NSManagedObject functionality of the model object
         // The generic chunk of clay

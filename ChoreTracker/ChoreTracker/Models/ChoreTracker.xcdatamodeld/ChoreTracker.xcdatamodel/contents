@@ -30,7 +30,6 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="totalPoints" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="points" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
@@ -42,7 +41,7 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="child" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="emailAddress" attributeType="String" syncable="YES"/>
+        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="loginName" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -60,7 +59,7 @@
     <elements>
         <element name="Chore" positionX="-265.5" positionY="-12.8046875" width="158.296875" height="180"/>
         <element name="ChoreTemplate" positionX="-171.6171875" positionY="-332.078125" width="170.1953125" height="225"/>
-        <element name="Points" positionX="-420.06640625" positionY="353.89453125" width="128" height="135"/>
+        <element name="Points" positionX="-420.06640625" positionY="353.89453125" width="128" height="120"/>
         <element name="Settings" positionX="-418.50390625" positionY="209.1015625" width="128" height="120"/>
         <element name="User" positionX="-696.0390625" positionY="-48.9453125" width="198.31640625" height="270"/>
     </elements>

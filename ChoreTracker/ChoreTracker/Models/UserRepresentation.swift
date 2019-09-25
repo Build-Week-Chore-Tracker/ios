@@ -13,7 +13,7 @@ struct UserRepresentation: Codable, Equatable {
     let loginName:      String
     let password:       String
     let name:           String
-    let emailAddress:   String
+    let emailAddress:   String?
     let child:          Bool = false
     let parentID:       Int32?
     let picture:        String?
