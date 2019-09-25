@@ -50,17 +50,21 @@ class AdultChildDetailVC: UIViewController {
             if let user = user { //Update user
                 userController?.update(user: user, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: true, picture: pictureURL)
             } else { //Create/Add user
-                try userController?.register(loginName: loginName, password: password, name: name, emailAddress: emailAddress, child: true)
+                try userController?.register(loginName: loginName, password: password, name: name, emailAddress: emailAddress, child: true, picture: pictureURL)
             }
         } catch let error as AppError {
             alert(vc: self, error: error)
+            return
         } catch {
             NSLog("Error creating child: \(error)")
+            return
         }
+        alert(vc: self, title: "Success", message: "Child created successfully.")
+        self.performSegue(withIdentifier: "UnwindToAdultChildTableSegue", sender: self)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.performSegue(withIdentifier: "UnwindToAdultChildTableSegue", sender: self)
     }
     
     private func updateViews() {

@@ -23,12 +23,13 @@ class UserController {
         completion()
     }
     
-    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String? = nil) throws -> User? {
+    @discardableResult func create(id: Int32, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String?) throws -> User? {
         guard uniqueLoginName(loginName: loginName) else
         {
             throw (AppError.nameNotUnique)
         }
         let user = User(id: id,loginName: loginName, password: password, name: name, emailAddress: emailAddress,child: child, picture: picture, context: CoreDataStack.shared.mainContext)
+        if user.child { user.parent = UserController.currentUser}
         CoreDataStack.shared.save()
         //put(representation: user.userRepresentation)
         return user
@@ -48,13 +49,14 @@ class UserController {
         return unique
     }
     
-    func update(user: User, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String? = nil) {
+    func update(user: User, name: String, loginName: String, password: String, emailAddress: String?, child: Bool, picture: String?) {
         user.name = name
         user.loginName = loginName
         user.password = password
         user.emailAddress = emailAddress
         user.child = child
         user.picture = picture
+        if user.child && user.parent == nil { user.parent = UserController.currentUser}
         CoreDataStack.shared.save()
         //put(representation: user.userRepresentation)
     }
@@ -113,7 +115,8 @@ class UserController {
                                      password: String,
                                      name: String,
                                      emailAddress: String?,
-                                     child: Bool) throws -> User?
+                                     child: Bool,
+                                     picture: String?) throws -> User?
     {
         var user: User?
         if useAPI {
@@ -123,7 +126,7 @@ class UserController {
             guard let id = getNextID() else { return nil }
             if debuging { print ("User Register: ID = \(id)") }
             do {
-                user =  try create(id: id, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: child)
+                user =  try create(id: id, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: child, picture: picture)
                 if debuging { print ("User Register: user created = \(String(describing: user))") }
                 return user
             } catch {
@@ -143,6 +146,29 @@ class UserController {
         } catch {
             return nil
         }
+    }
+    
+    //TODO: Add period to call
+    func getUserStats(with user: User) -> [String:Int] {
+        let nowDate:Date = Date()
+        let startDate:Date = Date()
+        //Get assigned chores count
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+        do {
+            //fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+            let chores = try context.fetch(fetchRequest)
+            //return users[0]
+        } catch {
+            //return nil
+        }
+        //Get done chore count
+        //Get needs approval chore count
+        //get total points for period
+        
+        
+        
+        return [:]
     }
     
     //MARK: - JSON API code
