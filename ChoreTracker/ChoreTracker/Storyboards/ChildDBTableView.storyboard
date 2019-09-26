@@ -63,6 +63,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="choreLabel" destination="BnN-Sv-fx2" id="en7-Bx-OjA"/>
+                                    <outlet property="dueDateLabel" destination="aFM-Mx-eU4" id="VEd-By-qny"/>
+                                    <outlet property="pointsLabel" destination="fvV-um-fcm" id="d54-cA-TY5"/>
                                     <segue destination="2yK-Vj-tYa" kind="show" identifier="ChildChoreSegue" id="ZDU-m0-TLF"/>
                                 </connections>
                             </tableViewCell>
@@ -73,15 +76,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Child Dashboard" id="2KR-7w-5Ha"/>
-                    <connections>
-                        <outlet property="choreLabel" destination="BnN-Sv-fx2" id="G5D-8O-M1Z"/>
-                        <outlet property="dueDateLabel" destination="aFM-Mx-eU4" id="Bx8-NZ-7E3"/>
-                        <outlet property="pointsLabel" destination="fvV-um-fcm" id="gJL-ZO-VgV"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovj-Yu-li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3622" y="1026"/>
+            <point key="canvasLocation" x="3546" y="987"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W96-9X-Rd4">
