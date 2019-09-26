@@ -14,11 +14,6 @@ class ChildTableVC: UITableViewController {
 	let choreController = ChoreController()
 	let choreTemplateController = ChoreTemplateController()
 
-
-	@IBOutlet weak var choreLabel: UILabel!
-	@IBOutlet weak var dueDateLabel: UILabel!
-	@IBOutlet weak var pointsLabel: UILabel!
-
 	lazy var fetchResultsController: NSFetchedResultsController<Chore>  = {
 
 		let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
@@ -44,7 +39,7 @@ class ChildTableVC: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		view.backgroundColor = .loginBackground
 
 	}
 
