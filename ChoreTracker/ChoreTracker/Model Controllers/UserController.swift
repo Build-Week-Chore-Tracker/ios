@@ -12,6 +12,7 @@ import CoreData
 class UserController {
     
     static let shared = UserController()
+    let userNetworkingAPI = UserNetworkingAPI()
     static var currentUser: User?
     
     init() {
@@ -70,6 +71,14 @@ class UserController {
     func login(loginName: String, password: String) throws -> Bool {
         if useAPI {
             //TODO: - Do Network call and get and save token
+            let user = APIUser(name: nil, username: loginName, email: nil, password: password)
+            userNetworkingAPI.signIn(with: user) { (error) in
+                if let error = error {
+                    
+                } else {
+                    
+                }
+            }
         } else {
             //Mock up with local DB
             let context = CoreDataStack.shared.mainContext
@@ -125,6 +134,12 @@ class UserController {
         var user: User?
         if useAPI {
             //TODO: - Do Network call and get and save token
+            let apiUser = APIUser(name: name, username: loginName, email: emailAddress, password: password)
+            do {
+                try userNetworkingAPI.signUp(with: apiUser)
+            } catch {
+                
+            }
         } else {
             //Mock up with local DB
             guard let id = getNextID() else { return nil }

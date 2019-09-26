@@ -55,6 +55,8 @@
 		E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D523396EDB0038E55A /* ChoreController.swift */; };
 		E0A7F3D823399AFC0038E55A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D723399AFC0038E55A /* Date.swift */; };
 		E0D861BA233D035400460F50 /* UserNetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */; };
+		E0D861BC233D0A9700460F50 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861BB233D0A9700460F50 /* APIUser.swift */; };
+		E0D861BE233D168400460F50 /* choreTrackerLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D861BD233D168400460F50 /* choreTrackerLogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		E0A7F3D523396EDB0038E55A /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreController.swift; sourceTree = "<group>"; };
 		E0A7F3D723399AFC0038E55A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkingAPI.swift; sourceTree = "<group>"; };
+		E0D861BB233D0A9700460F50 /* APIUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
+		E0D861BD233D168400460F50 /* choreTrackerLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choreTrackerLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 		E0A7F3A92338134E0038E55A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0D861BD233D168400460F50 /* choreTrackerLogo.png */,
 				DDDA2257233ACB6900B5D5A9 /* ColorKey.swift */,
 				E07A5191233B13B900C84B26 /* Alert.swift */,
 				E0A7F3952338130E0038E55A /* AppDelegate.swift */,
@@ -253,6 +258,7 @@
 			children = (
 				E0A7F3B223384BD40038E55A /* Networking.swift */,
 				E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */,
+				E0D861BB233D0A9700460F50 /* APIUser.swift */,
 			);
 			path = "Networking API";
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				DD3E5981233A79C700F4FD0C /* ChildDBChoreDetail.storyboard in Resources */,
 				DD3E597F233A796F00F4FD0C /* ChildDBPoints.storyboard in Resources */,
 				DD45E4F823397B80005174FD /* Login.storyboard in Resources */,
+				E0D861BE233D168400460F50 /* choreTrackerLogo.png in Resources */,
 				DD3E5977233A6A7F00F4FD0C /* ChildDBTableView.storyboard in Resources */,
 				DD3E5979233A6BD700F4FD0C /* AdultChildTableView.storyboard in Resources */,
 				E0A7F3A0233813110038E55A /* LaunchScreen.storyboard in Resources */,
@@ -336,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD3E5985233A7DC800F4FD0C /* AdultChoreDetailVC.swift in Sources */,
+				E0D861BC233D0A9700460F50 /* APIUser.swift in Sources */,
 				DD3E5987233A7EA300F4FD0C /* AdultChildTableVC.swift in Sources */,
 				DD3E5983233A7D3900F4FD0C /* AdultChoreTableVC.swift in Sources */,
 				DD45E4FA23397C2A005174FD /* LoginViewController.swift in Sources */,
