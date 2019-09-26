@@ -18,5 +18,5 @@ struct APIUser: Codable{
 struct LoginResponse: Codable {
     let message:    String
     let token:      String
-    let user:       Int
+    let user:       Int32
 }
