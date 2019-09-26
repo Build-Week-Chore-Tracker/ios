@@ -11,7 +11,8 @@ import UIKit
 class AdultChoreDetailVC: UIViewController {
     
     var chore: Chore?
-    var choreCOntroller: ChoreController?
+    var choreController: ChoreController?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class AdultChoreDetailVC: UIViewController {
     }
     
 
+    private func updateViews() {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
