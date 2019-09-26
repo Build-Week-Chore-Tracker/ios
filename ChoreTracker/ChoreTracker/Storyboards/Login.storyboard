@@ -188,7 +188,7 @@
                         <outlet property="regView" destination="l2k-52-Fqn" id="R9G-z7-xHC"/>
                         <outlet property="signupLoginLabel" destination="qwm-hh-CAZ" id="8WQ-Ba-CDI"/>
                         <outlet property="usernameTextField" destination="cmr-9u-1oO" id="Zlk-WV-fnu"/>
-                        <segue destination="gYQ-UR-mO7" kind="show" identifier="ChildDashboardSeqgue" id="G8T-GE-fUe"/>
+                        <segue destination="gYQ-UR-mO7" kind="show" identifier="ChildDashboardSegue" id="G8T-GE-fUe"/>
                         <segue destination="DtL-XL-tCA" kind="show" identifier="AdultDashboardSegue" id="G8z-ab-ahi"/>
                     </connections>
                 </viewController>

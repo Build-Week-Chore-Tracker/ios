@@ -20,7 +20,7 @@ class UserNetworkingAPI {
             let id: Int
         }
         
-        let appendedURL = baseAPIURL.appendingPathComponent("/api/auth/register")
+        let appendedURL = baseURL.appendingPathComponent("/api/auth/register")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -57,7 +57,7 @@ class UserNetworkingAPI {
     
     func signIn(with user: APIUser, completion: @escaping (Error?) -> Void) {
         
-        let appendedURL = baseAPIURL.appendingPathComponent("/api/auth/login")
+        let appendedURL = baseURL.appendingPathComponent("/users/\(user.username)")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
