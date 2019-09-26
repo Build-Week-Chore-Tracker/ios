@@ -13,7 +13,13 @@ class UserNetworkingAPI {
     static let shared = UserNetworkingAPI()
     static var userToken: String?
 
-    func signUp(with user: APIUser, completion: @escaping (Error?) -> Void) {
+    func signUp(with user: APIUser, completion: @escaping (Int?, Error?) -> Void = {_, _ in}) {
+        
+        struct responseJSON: Decodable {
+            let message: String
+            let id: Int
+        }
+        
         let appendedURL = baseAPIURL.appendingPathComponent("/api/auth/register")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -23,21 +29,29 @@ class UserNetworkingAPI {
             request.httpBody = data
         } catch {
             NSLog("UserNetworkingAPI: Error encoding user info: \(error)")
-            completion(error)
+            completion(nil, error)
             return
         }
-        URLSession.shared.dataTask(with: request) { (_, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
-                completion(NetworkError.failedSignUp(NSError(domain: baseAPIURL.absoluteString, code: response.statusCode, userInfo: nil)))
+                completion(nil, NetworkError.failedSignUp(NSError(domain: baseAPIURL.absoluteString, code: response.statusCode, userInfo: nil)))
                 return
             }
             if let error = error {
-                completion(error)
+                completion(nil, error)
                 return
             }
-            completion(nil)
+            guard let data = data else { completion(nil, NetworkError.invalidData); return}
+            do {
+                let userID: responseJSON = try JSONDecoder().decode(responseJSON.self, from: data)
+                completion(userID.id,nil)
+            } catch {
+                NSLog("UserController: Error decoding token: \(error)")
+                completion(nil, NetworkError.noDecode)
+                return
+            }
             }.resume()
     }
     
@@ -68,6 +82,7 @@ class UserNetworkingAPI {
             do {
                 let loginResponse: LoginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
                 UserNetworkingAPI.userToken = loginResponse.token
+                completion(nil)
             } catch {
                 NSLog("UserController: Error decoding token: \(error)")
                 completion(NetworkError.noDecode)

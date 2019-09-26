@@ -9,7 +9,10 @@
 import UIKit
 
 class AdultChoreDetailVC: UIViewController {
-
+    
+    var chore: Chore?
+    var choreCOntroller: ChoreController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
