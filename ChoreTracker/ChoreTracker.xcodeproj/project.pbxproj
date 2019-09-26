@@ -124,7 +124,6 @@
 		E0A7F3892338130E0038E55A = {
 			isa = PBXGroup;
 			children = (
-				DDDA2257233ACB6900B5D5A9 /* ColorKey.swift */,
 				E0A7F3942338130E0038E55A /* ChoreTracker */,
 				E0A7F3932338130E0038E55A /* Products */,
 			);
@@ -182,6 +181,7 @@
 		E0A7F3A92338134E0038E55A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDDA2257233ACB6900B5D5A9 /* ColorKey.swift */,
 				E07A5191233B13B900C84B26 /* Alert.swift */,
 				E0A7F3952338130E0038E55A /* AppDelegate.swift */,
 				E0A7F39C233813110038E55A /* Assets.xcassets */,
