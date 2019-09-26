@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
+
+class AdultChoreViewCell: UITableViewCell {
+    
+    var chore: Chore?{
+        didSet{
+            updateViews()
+        }
+    }
+    
+    
+    private func updateViews() {
+        if let chore = chore {
+            
+        }
+    }
+}

@@ -18,12 +18,22 @@ func alert (vc: UIViewController, title: String, message: String, error: AppErro
     }
 }
     
-func alert (vc: UIViewController, error: AppError) {
-    let message = error.rawValue
+func alert (vc: UIViewController, AppError: AppError) {
+    let message = AppError.rawValue
     let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
     alert.addAction(action)
     DispatchQueue.main.async {
         vc.present(alert, animated: true, completion: nil)
+    }
+    
+    func alert (vc: UIViewController, Error: Error) {
+        let message = String(describing: Error)
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        DispatchQueue.main.async {
+            vc.present(alert, animated: true, completion: nil)
+        }
     }
 }

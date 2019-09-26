@@ -12,6 +12,7 @@ import CoreData
 class UserController {
     
     static let shared = UserController()
+    let userNetworkingAPI = UserNetworkingAPI()
     static var currentUser: User?
     
     init() {
@@ -67,9 +68,17 @@ class UserController {
         //Implement delete from Firebase?
     }
     
-    func login(loginName: String, password: String) throws -> Bool {
+    @discardableResult func login(loginName: String, password: String, completion: @escaping (Error?)->Void = {_ in }) throws -> Bool {
         if useAPI {
             //TODO: - Do Network call and get and save token
+            let user = APIUser(name: nil, username: loginName, email: nil, password: password)
+            userNetworkingAPI.signIn(with: user) { (error) in
+                if let error = error {
+                    completion(error)
+                } else {
+                    completion(nil)
+                }
+            }
         } else {
             //Mock up with local DB
             let context = CoreDataStack.shared.mainContext
@@ -120,11 +129,29 @@ class UserController {
                                      name: String,
                                      emailAddress: String?,
                                      child: Bool,
-                                     picture: String?) throws -> User?
+                                     picture: String?,
+                                     completion: @escaping (Error?) -> Void = {_ in}) throws -> User?
     {
         var user: User?
         if useAPI {
             //TODO: - Do Network call and get and save token
+            let apiUser = APIUser(name: name, username: loginName, email: emailAddress, password: password)
+            userNetworkingAPI.signUp(with: apiUser) {id, error in
+                if let error = error {
+                    completion(NetworkError.failedSignUp(error))
+                    return
+                }
+                do {
+                    if let id = id {
+                        let userID = Int32(id)
+                        try self.create(id: userID, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: child, picture: picture)
+                        completion(nil)
+                    }
+                } catch {
+                    completion(error)
+                }
+            }
+            
         } else {
             //Mock up with local DB
             guard let id = getNextID() else { return nil }
@@ -180,34 +207,34 @@ class UserController {
     //MARK: - JSON API code
     let objectType: String = "User"
     
-    func put(representation: UserRepresentation?, completion: @escaping (_ error: Error?) -> Void = { _ in }) {
-        guard let representation = representation else {
-            NSLog("\(objectType) Representation is nil for put function.")
-            completion(AppError.objectToRepFailed)
-            return
-        }
-        let idString = String(representation.id)
-        let requestURL = baseURL.appendingPathComponent(idString).appendingPathExtension("json")
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.put.rawValue
-        do {
-            let encoder = JSONEncoder()
-            encoder.dateEncodingStrategy = .iso8601
-            request.httpBody = try encoder.encode(representation)
-            print ("HTTP Body: \(String(describing: request.httpBody))")
-        } catch {
-            NSLog("Error encoding task respresentation: \(error)")
-            completion(error)
-            return
-        }
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                NSLog("Error PUTing entry: \(error)")
-                completion(error)
-                return
-            }
-            }.resume()
-    }
+//    func put(representation: UserRepresentation?, completion: @escaping (_ error: Error?) -> Void = { _ in }) {
+//        guard let representation = representation else {
+//            NSLog("\(objectType) Representation is nil for put function.")
+//            completion(AppError.objectToRepFailed)
+//            return
+//        }
+//        let idString = String(representation.id)
+//        let requestURL = baseURL.appendingPathComponent(idString).appendingPathExtension("json")
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.put.rawValue
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.dateEncodingStrategy = .iso8601
+//            request.httpBody = try encoder.encode(representation)
+//            print ("HTTP Body: \(String(describing: request.httpBody))")
+//        } catch {
+//            NSLog("Error encoding task respresentation: \(error)")
+//            completion(error)
+//            return
+//        }
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let error = error {
+//                NSLog("Error PUTing entry: \(error)")
+//                completion(error)
+//                return
+//            }
+//            }.resume()
+//    }
     
 //    func fetchUsersFromServer(completion: @escaping (_ error: Error?) -> Void = { _ in }) {
 //        let requestURL = baseURL.appendingPathExtension("json")

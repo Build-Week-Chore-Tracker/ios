@@ -53,7 +53,7 @@ class AdultChildDetailVC: UIViewController {
                     try UserController.shared.register(loginName: loginName, password: password, name: name, emailAddress: emailAddress, child: true, picture: pictureURL)
                 }
             } catch let error as AppError {
-                alert(vc: self, error: error)
+                alert(vc: self, AppError: error)
                 return
             } catch {
                 NSLog("Error creating child: \(error)")

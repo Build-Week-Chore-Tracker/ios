@@ -44,10 +44,10 @@ class AdultChoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "adultChildCell", for: indexPath) as? AdultChildViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "adultChildCell", for: indexPath) as? AdultChoreViewCell,
             let frc = choreFRC
             else { return UITableViewCell() }
-        cell.user = frc.object(at: indexPath)
+        cell.chore = frc.object(at: indexPath)
         return cell
     }
     
@@ -56,7 +56,7 @@ class AdultChoreTableViewController: UITableViewController {
         guard let frc = choreFRC else { return }
         if editingStyle == .delete {
             // Delete the row from the data source
-            UserController.shared.delete(user: frc.object(at: indexPath))
+            ChoreController.shared.delete(chore: frc.object(at: indexPath))
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -80,23 +80,23 @@ class AdultChoreTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? AdultChoreDetailVC else { return }
-        guard let frc = choreFRC else { return }
-        //vc.userController = userController
-        switch segue.identifier {
-        case "EditChildSegue":
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let user = frc.object(at: indexPath)
-                vc.user = user
-                NSLog("AdultChildTableVC: Sending user: \(String(describing: user.name))")
-            }
-        case "AddChildSegue":
-            break
-        default:
-            break
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let vc = segue.destination as? AdultChoreDetailVC else { return }
+//        guard let frc = choreFRC else { return }
+//        //vc.userController = userController
+//        switch segue.identifier {
+//        case "EditChildSegue":
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                let user = frc.object(at: indexPath)
+//                vc.user = user
+//                NSLog("AdultChildTableVC: Sending user: \(String(describing: user.name))")
+//            }
+//        case "AddChildSegue":
+//            break
+//        default:
+//            break
+//        }
+//    }
 }
 
 //MARK: - NSFetchedResultsControllerDelegate

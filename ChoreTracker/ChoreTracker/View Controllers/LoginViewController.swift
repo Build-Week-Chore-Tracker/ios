@@ -8,6 +8,7 @@
 
 import UIKit
 
+@IBDesignable
 class LoginViewController: UIViewController {
 
 	// MARK: - Properties
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .loginBackground
         updateViews()
         // Do any additional setup after loading the view.
     }
@@ -73,19 +75,22 @@ class LoginViewController: UIViewController {
             return
             }
             //Login user
-            if UserController.shared.login(loginName: userName, password: password) {
-                if UserController.currentUser?.child ?? true {
-                    //Segue to Child Dashboard
-                    self.performSegue(withIdentifier: "ChildDashboardSegue", sender: self)
-                } else {
-                    //Segue to Adult Dashboard
-                    self.performSegue(withIdentifier: "AdultDashboardSegue", sender: self)
+            do {
+                try UserController.shared.login(loginName: userName, password: password) { error in
+                    if UserController.currentUser?.child ?? true {
+                        //Segue to Child Dashboard
+                        
+                        self.performSegue(withIdentifier: "ChildDashboardSegue", sender: self)
+                    } else {
+                        //Segue to Adult Dashboard
+                        self.performSegue(withIdentifier: "AdultDashboardSegue", sender: self)
+                    }
                 }
-            } else {
-                //Message user about failed login
-                alert(vc: self, title: "Error", message: "Failed to log in with that username and password.")
+            } catch let error as AppError{
+                alert(vc: self, AppError: error)
+            } catch {
+                alert(vc: self, title: "Error", message: String(describing: error))
             }
-            
         } else { //Perform Registration
             guard let userName = usernameTextField.text, !userName.isEmpty,
                 let password = passwordTextField.text, !password.isEmpty,
@@ -98,14 +103,16 @@ class LoginViewController: UIViewController {
             }
             //Do registration
             do {
-                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: false, picture: nil)
+                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: false, picture: nil) { error in
+                    
+                }
                 //Success, message user
                 login = true
                 updateViews()
                 alert(vc: self, title: "Success", message: "Registration successful.  You can login now.")
             } catch let error as AppError {
                 //Failed, message user
-                alert(vc: self, error: error)
+                alert(vc: self, AppError: error)
             } catch {
                 NSLog("Error: \(error)")
             }
