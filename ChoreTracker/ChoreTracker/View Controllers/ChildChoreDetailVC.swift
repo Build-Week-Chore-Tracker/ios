@@ -10,21 +10,45 @@ import UIKit
 
 class ChildChoreDetailVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	@IBOutlet weak var choreLabel: UILabel!
+	@IBOutlet weak var dueDateLabel: UILabel!
+	@IBOutlet weak var descriptionLabel: UILabel!
+	@IBOutlet weak var pointsLabel: UILabel!
 
-        // Do any additional setup after loading the view.
-    }
-    
+	var choreController: ChoreController?
+	var chore: Chore?
 
-    /*
-    // MARK: - Navigation
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		updateViews()
+	}
+
+
+
+	@IBAction func completedToggle(_ sender: Any) {
+
+
+	}
+
+	func updateViews() {
+
+		title = chore?.choreTemplate?.name ?? "Create Chore"
+
+		choreLabel.text = chore?.choreTemplate?.name
+		dueDateLabel.text = "\(String(describing: chore?.dueDate))"
+		descriptionLabel.text = chore?.choreTemplate?.choreDescription
+		pointsLabel.text = String(chore?.choreTemplate?.points)
+	}
+
+	/*
+	// MARK: - Navigation
+
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	// Get the new view controller using segue.destination.
+	// Pass the selected object to the new view controller.
+	}
+	*/
 
 }
