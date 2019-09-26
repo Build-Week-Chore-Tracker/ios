@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .loginBackground
+        regView.backgroundColor = .loginBackground
         updateViews()
         // Do any additional setup after loading the view.
     }
@@ -41,9 +42,9 @@ class LoginViewController: UIViewController {
         case 0:
             loginSegmentControl.isHidden = false
         case 1:
-            loginSegmentControl.selectedSegmentIndex = 0
-            loginSegmentControl.isHidden = true
-            login = true
+            //loginSegmentControl.selectedSegmentIndex = 0
+            //loginSegmentControl.isHidden = true
+            //login = true
             updateViews()
         default:
             break
@@ -77,13 +78,19 @@ class LoginViewController: UIViewController {
             //Login user
             do {
                 try UserController.shared.login(loginName: userName, password: password) { error in
-                    if UserController.currentUser?.child ?? true {
-                        //Segue to Child Dashboard
-                        
-                        self.performSegue(withIdentifier: "ChildDashboardSegue", sender: self)
+                    if let error = error {
+                        alert(vc: self, title: "Error", message: String(describing: error))
                     } else {
-                        //Segue to Adult Dashboard
-                        self.performSegue(withIdentifier: "AdultDashboardSegue", sender: self)
+                        DispatchQueue.main.async {
+                            if UserController.currentUser?.child ?? true {
+                                //Segue to Child Dashboard
+                                
+                                self.performSegue(withIdentifier: "ChildDashboardSegue", sender: self)
+                            } else {
+                                //Segue to Adult Dashboard
+                                self.performSegue(withIdentifier: "AdultDashboardSegue", sender: self)
+                            }
+                        }
                     }
                 }
             } catch let error as AppError{
@@ -102,8 +109,9 @@ class LoginViewController: UIViewController {
                 return
             }
             //Do registration
+            let child = parentSegmentControl.selectedSegmentIndex == 1
             do {
-                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: false, picture: nil) { error in
+                try UserController.shared.register(loginName: userName, password: password, name: fullName, emailAddress: emailAddress, child: child, picture: nil) { error in
                     
                 }
                 //Success, message user

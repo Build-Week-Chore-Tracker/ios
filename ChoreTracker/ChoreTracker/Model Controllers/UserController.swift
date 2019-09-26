@@ -89,6 +89,7 @@ class UserController {
                 if users.count > 0 {
                     if users[0].password ?? "" == password {
                         UserController.currentUser = users[0]
+                        completion(nil)
                         return true
                     } else {
                         NSLog("Error loggin in with local DB, password did not match.")
