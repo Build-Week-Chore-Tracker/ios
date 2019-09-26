@@ -38,7 +38,7 @@ class ChildChoreDetailVC: UIViewController {
 		choreLabel.text = chore?.choreTemplate?.name
 		dueDateLabel.text = "\(String(describing: chore?.dueDate))"
 		descriptionLabel.text = chore?.choreTemplate?.choreDescription
-		pointsLabel.text = String(chore?.choreTemplate?.points)
+		//pointsLabel.text = String(chore?.choreTemplate?.points)
 	}
 
 	/*
