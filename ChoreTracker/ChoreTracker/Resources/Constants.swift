@@ -13,5 +13,5 @@ typealias Completion = (_ error: AppError?) -> Void
 let coreDataModelName: String   = "ChoreTracker"
 let baseFBURL: URL              = URL(string: "https://choretracker-c064c.firebaseio.com/")!
 let baseAPIURL: URL             = URL(string: "https://chore-tracker-app.herokuapp.com/")!
-let useAPI: Bool                = false
+let useAPI: Bool                = true
 let debuging: Bool              = true

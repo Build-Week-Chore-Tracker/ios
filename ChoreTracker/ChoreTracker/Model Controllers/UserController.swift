@@ -134,7 +134,7 @@ class UserController {
     {
         var user: User?
         if useAPI {
-            //TODO: - Do Network call and get and save token
+            //Do Network call and get user id
             let apiUser = APIUser(name: name, username: loginName, email: emailAddress, password: password)
             userNetworkingAPI.signUp(with: apiUser) {id, error in
                 if let error = error {

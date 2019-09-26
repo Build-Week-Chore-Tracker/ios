@@ -56,6 +56,7 @@ class UserNetworkingAPI {
     }
     
     func signIn(with user: APIUser, completion: @escaping (Error?) -> Void) {
+        
         let appendedURL = baseAPIURL.appendingPathComponent("/api/auth/login")
         var request = URLRequest(url: appendedURL)
         request.httpMethod = HTTPMethod.post.rawValue
