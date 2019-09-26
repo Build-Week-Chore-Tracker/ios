@@ -35,7 +35,6 @@
 		E0A7F39D233813110038E55A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F39C233813110038E55A /* Assets.xcassets */; };
 		E0A7F3A0233813110038E55A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0A7F39E233813110038E55A /* LaunchScreen.storyboard */; };
 		E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3AD233813BD0038E55A /* ChoreTracker.xcdatamodeld */; };
-		E0A7F3B1233849AB0038E55A /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B0233849AB0038E55A /* UserPreferences.swift */; };
 		E0A7F3B423384BD40038E55A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B223384BD40038E55A /* Networking.swift */; };
 		E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */; };
 		E0A7F3B723396C5F0038E55A /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3B623396C5F0038E55A /* UserRepresentation.swift */; };
@@ -55,6 +54,7 @@
 		E0A7F3D423396EC50038E55A /* ChoreTemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */; };
 		E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D523396EDB0038E55A /* ChoreController.swift */; };
 		E0A7F3D823399AFC0038E55A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A7F3D723399AFC0038E55A /* Date.swift */; };
+		E0D861BA233D035400460F50 /* UserNetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +88,6 @@
 		E0A7F39F233813110038E55A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0A7F3A1233813110038E55A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0A7F3AE233813BD0038E55A /* ChoreTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChoreTracker.xcdatamodel; sourceTree = "<group>"; };
-		E0A7F3B0233849AB0038E55A /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		E0A7F3B223384BD40038E55A /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		E0A7F3B623396C5F0038E55A /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		E0A7F3D323396EC50038E55A /* ChoreTemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTemplateController.swift; sourceTree = "<group>"; };
 		E0A7F3D523396EDB0038E55A /* ChoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreController.swift; sourceTree = "<group>"; };
 		E0A7F3D723399AFC0038E55A /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkingAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +144,7 @@
 				E0A7F3CC23396E1F0038E55A /* Convenience */,
 				E0A7F3A8233813330038E55A /* Model Controllers */,
 				E0A7F3A72338132D0038E55A /* Models */,
+				E0D861B8233D031700460F50 /* Networking API */,
 				E0A7F3A92338134E0038E55A /* Resources */,
 				E0A7F3AC2338138A0038E55A /* Storyboards */,
 				E0A7F3AB2338136D0038E55A /* View Controllers */,
@@ -174,7 +175,6 @@
 				E0A7F3D123396EA40038E55A /* PointsController.swift */,
 				E0A7F3CF23396E8E0038E55A /* SettingsController.swift */,
 				E0A7F3CD23396E710038E55A /* UserController.swift */,
-				E0A7F3B0233849AB0038E55A /* UserPreferences.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -188,8 +188,6 @@
 				E07A518F233A6C0D00C84B26 /* Constants.swift */,
 				E07A5193233B19F700C84B26 /* ErrorHandling.swift */,
 				E0A7F3A1233813110038E55A /* Info.plist */,
-				E0A7F3B223384BD40038E55A /* Networking.swift */,
-				E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -244,9 +242,19 @@
 				E0A7F3D723399AFC0038E55A /* Date.swift */,
 				E0A7F3C423396D970038E55A /* Points+Convenience.swift */,
 				E0A7F3C223396D810038E55A /* Settings+Convenience.swift */,
+				E0A7F3B323384BD40038E55A /* UIImageViewExtension.swift */,
 				E0A7F3C023396D6D0038E55A /* User+Convenience.swift */,
 			);
 			path = Convenience;
+			sourceTree = "<group>";
+		};
+		E0D861B8233D031700460F50 /* Networking API */ = {
+			isa = PBXGroup;
+			children = (
+				E0A7F3B223384BD40038E55A /* Networking.swift */,
+				E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */,
+			);
+			path = "Networking API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +351,6 @@
 				E0A7F3B923396C7C0038E55A /* SettingsRepresentation.swift in Sources */,
 				DD3E598F233A82E700F4FD0C /* ChildTableVC.swift in Sources */,
 				E0A7F3B523384BD40038E55A /* UIImageViewExtension.swift in Sources */,
-				E0A7F3B1233849AB0038E55A /* UserPreferences.swift in Sources */,
 				E0A7F3BB23396C980038E55A /* PointsRepresentation.swift in Sources */,
 				E0A7F3C123396D6D0038E55A /* User+Convenience.swift in Sources */,
 				E0A7F3D223396EA40038E55A /* PointsController.swift in Sources */,
@@ -356,6 +363,7 @@
 				E0A7F3C923396DC60038E55A /* Chore+Convenience.swift in Sources */,
 				E0A7F3CB23396DF10038E55A /* CoreDataStack.swift in Sources */,
 				E0A7F3BF23396CF50038E55A /* ChoreRepresentation.swift in Sources */,
+				E0D861BA233D035400460F50 /* UserNetworkingAPI.swift in Sources */,
 				E0A7F3D023396E8E0038E55A /* SettingsController.swift in Sources */,
 				E0A7F3C523396D970038E55A /* Points+Convenience.swift in Sources */,
 				E0A7F3D623396EDB0038E55A /* ChoreController.swift in Sources */,
