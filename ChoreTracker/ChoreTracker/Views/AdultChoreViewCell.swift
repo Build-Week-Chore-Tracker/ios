@@ -18,6 +18,11 @@ class AdultChoreViewCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var childNameLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var choreLabel: UILabel!
+    
+    
     
     private func updateViews() {
         if let chore = chore {

@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 
 class AdultChoreTableViewController: UITableViewController {
-        
+    
+    let choreController = ChoreController()
+    
     lazy var choreFRC: NSFetchedResultsController<Chore>? = {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
@@ -19,7 +21,7 @@ class AdultChoreTableViewController: UITableViewController {
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         do { try frc.performFetch() } catch { fatalError("NSFetchedResultsController failed: \(error)") }
-        print ("AdultChildTableVC: Children fetched: \(String(describing: frc.fetchedObjects?.count))")
+        print ("AdultChoreTableVC: Chores fetched: \(String(describing: frc.fetchedObjects?.count))")
         return frc
     }()
     
@@ -45,7 +47,7 @@ class AdultChoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "adultChildCell", for: indexPath) as? AdultChoreViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "adultChoreCell", for: indexPath) as? AdultChoreViewCell,
             let frc = choreFRC
             else { return UITableViewCell() }
         cell.chore = frc.object(at: indexPath)
@@ -81,23 +83,23 @@ class AdultChoreTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        guard let vc = segue.destination as? AdultChoreDetailVC else { return }
-//        guard let frc = choreFRC else { return }
-//        //vc.userController = userController
-//        switch segue.identifier {
-//        case "EditChildSegue":
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                let user = frc.object(at: indexPath)
-//                vc.user = user
-//                NSLog("AdultChildTableVC: Sending user: \(String(describing: user.name))")
-//            }
-//        case "AddChildSegue":
-//            break
-//        default:
-//            break
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? AdultChoreDetailVC else { return }
+        guard let frc = choreFRC else { return }
+        vc.choreController = choreController
+        switch segue.identifier {
+        case "EditChoreSegue":
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let chore = frc.object(at: indexPath)
+                vc.chore = chore
+                NSLog("AdultChoreTableVC: Sending chore: \(String(describing: chore.choreTemplate?.name))")
+            }
+        case "AddChoreSegue":
+            break
+        default:
+            break
+        }
+    }
 }
 
 //MARK: - NSFetchedResultsControllerDelegate

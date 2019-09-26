@@ -32,13 +32,17 @@ class ChildChoreDetailVC: UIViewController {
 	}
 
 	func updateViews() {
-
-		title = chore?.choreTemplate?.name ?? "Create Chore"
-
-		choreLabel.text = chore?.choreTemplate?.name
-		dueDateLabel.text = "\(String(describing: chore?.dueDate))"
-		descriptionLabel.text = chore?.choreTemplate?.choreDescription
-		//pointsLabel.text = String(chore?.choreTemplate?.points)
+        title = chore?.choreTemplate?.name ?? "Create Chore"
+        guard let chore = chore else { return }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dueDate = chore.dueDate ?? Date()
+        let dueDateString = formatter.string(from: dueDate)
+		choreLabel.text = chore.choreTemplate?.name
+		dueDateLabel.text = dueDateString
+		descriptionLabel.text = chore.choreTemplate?.choreDescription ?? ""
+		pointsLabel.text = "\(chore.choreTemplate?.points ?? 0)"
 	}
 
 	/*
