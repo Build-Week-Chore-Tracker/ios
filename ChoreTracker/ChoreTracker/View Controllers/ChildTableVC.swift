@@ -7,8 +7,40 @@
 //
 
 import UIKit
+import CoreData
 
 class ChildTableVC: UITableViewController {
+
+	let choreController = ChoreController()
+	let choreTemplateController = ChoreTemplateController()
+
+
+	@IBOutlet weak var choreLabel: UILabel!
+	@IBOutlet weak var dueDateLabel: UILabel!
+	@IBOutlet weak var pointsLabel: UILabel!
+
+	lazy var fetchResultsController: NSFetchedResultsController<Chore>  = {
+
+		let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+		fetchRequest.sortDescriptors = [NSSortDescriptor(key: "choreTemplate.name", ascending: true)]
+
+		// YOU MUST make the descriptor with the same key path as the sectionNameKeyPath be the first sort descriptor in this array
+
+		let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+											 managedObjectContext: CoreDataStack.shared.mainContext,
+											 sectionNameKeyPath: "choreTemplate.name",
+											 cacheName: nil)
+
+		frc.delegate = self as? NSFetchedResultsControllerDelegate
+
+		do {
+			try frc.performFetch()
+		} catch {
+			fatalError("Error performing fetch for frc: \(error)")
+		}
+
+		return frc
+	}()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +51,10 @@ class ChildTableVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
+	// MARK: - Methods
+
+
 
     // MARK: - Table view data source
 
@@ -88,3 +124,5 @@ class ChildTableVC: UITableViewController {
     */
 
 }
+
+
