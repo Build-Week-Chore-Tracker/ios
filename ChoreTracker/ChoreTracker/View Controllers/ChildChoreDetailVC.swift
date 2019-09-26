@@ -15,13 +15,15 @@ class ChildChoreDetailVC: UIViewController {
 	@IBOutlet weak var descriptionLabel: UILabel!
 	@IBOutlet weak var pointsLabel: UILabel!
 
+	var choreController: ChoreController?
+	var chore: Chore?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+		updateViews()
+	}
+
 
 
 	@IBAction func completedToggle(_ sender: Any) {
@@ -29,14 +31,24 @@ class ChildChoreDetailVC: UIViewController {
 
 	}
 
-    /*
-    // MARK: - Navigation
+	func updateViews() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		title = chore?.choreTemplate?.name ?? "Create Chore"
+
+		choreLabel.text = chore?.choreTemplate?.name
+		dueDateLabel.text = "\(String(describing: chore?.dueDate))"
+		descriptionLabel.text = chore?.choreTemplate?.choreDescription
+		pointsLabel.text = String(chore?.choreTemplate?.points)
+	}
+
+	/*
+	// MARK: - Navigation
+
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	// Get the new view controller using segue.destination.
+	// Pass the selected object to the new view controller.
+	}
+	*/
 
 }
