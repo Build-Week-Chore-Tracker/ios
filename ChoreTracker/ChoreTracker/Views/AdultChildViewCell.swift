@@ -35,7 +35,11 @@ class AdultChildViewCell: UITableViewCell {
                 childImageView.image = UIImage(named: "child")
             }
             childNameLabel.text = user.name
+<<<<<<< HEAD
+            //let stats = getUserStats(user: user)
+=======
            // let stats = getUserStats(user: user)
+>>>>>>> Percy
         }
     }
 }
