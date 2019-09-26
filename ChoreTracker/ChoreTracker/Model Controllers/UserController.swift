@@ -67,7 +67,7 @@ class UserController {
         //Implement delete from Firebase?
     }
     
-    func login(loginName: String, password: String) -> Bool {
+    func login(loginName: String, password: String) throws -> Bool {
         if useAPI {
             //TODO: - Do Network call and get and save token
         } else {
@@ -77,16 +77,20 @@ class UserController {
             do {
                 fetchRequest.predicate = NSPredicate(format: "loginName == %@", loginName)
                 let users = try context.fetch(fetchRequest)
-                if users[0].password ?? "" == password {
-                    UserController.currentUser = users[0]
-                    return true
+                if users.count > 0 {
+                    if users[0].password ?? "" == password {
+                        UserController.currentUser = users[0]
+                        return true
+                    } else {
+                        NSLog("Error loggin in with local DB, password did not match.")
+                        throw(AppError.loginFailedWrongPassword)
+                    }
                 } else {
-                    NSLog("Error loggin in with local DB, password did not match.")
-                    return false
+                    throw (AppError.loginFailedLoginName)
                 }
             } catch {
                 NSLog("Error fetching user(s) with loginName: \(error)")
-                return false
+                throw (AppError.errorFetchingData)
             }
         }
         return true
