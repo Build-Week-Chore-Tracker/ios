@@ -20,7 +20,7 @@ class ChildChoreDetailVC: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		view.backgroundColor = .loginBackground
 		updateViews()
 	}
 
