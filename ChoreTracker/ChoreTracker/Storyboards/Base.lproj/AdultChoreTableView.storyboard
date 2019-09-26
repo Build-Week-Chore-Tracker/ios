@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoreCell" rowHeight="60" id="1DR-bM-59Q" customClass="adultchoreviewcell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="adultChoreCell" rowHeight="60" id="1DR-bM-59Q" customClass="AdultChoreViewCell" customModule="ChoreTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1DR-bM-59Q" id="MSk-yt-Ffl">
@@ -52,6 +52,11 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="childNameLabel" destination="TTW-LL-eLZ" id="bik-fQ-llt"/>
+                                    <outlet property="choreLabel" destination="BXK-0Q-BM3" id="1R1-c2-nX1"/>
+                                    <outlet property="dueDateLabel" destination="vq5-JQ-Ja3" id="nXS-SP-tqn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
