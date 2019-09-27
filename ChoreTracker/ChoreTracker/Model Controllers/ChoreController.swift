@@ -20,16 +20,35 @@ class ChoreController {
 	func sync(completion: @escaping () -> Void = {}) {
 		completion()
 	}
+    
+    private func getNextID () -> Int32? {
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
+        var idNumber: Int32
+        do {
+            fetchRequest.predicate = NSPredicate(value: true)
+            let chores = try context.fetch(fetchRequest)
+            idNumber = Int32(chores.count)
+            let allIDs = chores.map ( { $0.id } )
+            while allIDs.contains(idNumber) {
+                idNumber += 1
+            }
+        } catch {
+            NSLog("Error fetching users for getNextID: \(error)")
+            return nil
+        }
+        return idNumber
+    }
 
-	@discardableResult func create(id: Int32,
-								   choreTemplateID: Int32,
+	@discardableResult func create(choreTemplateID: Int32,
 								   createdDate: Date,
 								   dueDate: Date,
 								   doneDate: Date,
 								   approvedDate: Date,
 								   assignedUserID: Int32?,
 								   ownerUserID: Int32,
-								   assignedComment: String) -> Chore {
+								   assignedComment: String) -> Chore? {
+        guard let id = getNextID() else { return nil }
 		let chore = Chore(id: id, choreTemplateID: choreTemplateID, createdDate: createdDate, dueDate: dueDate, doneDate: doneDate, approvedDate: approvedDate, assignedUserID: assignedUserID, ownerUserID: ownerUserID, assigneeComment: assignedComment, context:  CoreDataStack.shared.mainContext)
 		CoreDataStack.shared.save()
 		//put(chore: chore!)

@@ -14,6 +14,7 @@ class UserController {
     static let shared = UserController()
     let userNetworkingAPI = UserNetworkingAPI()
     static var currentUser: User?
+    static var currentChild: User?
     
     init() {
         //fetchUsersFromServer()
@@ -106,7 +107,7 @@ class UserController {
         return true
     }
     
-    func getNextID () -> Int32? {
+    private func getNextID () -> Int32? {
         let context = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         var idNumber: Int32

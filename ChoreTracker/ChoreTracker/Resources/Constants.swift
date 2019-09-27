@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 typealias Completion = (_ error: AppError?) -> Void
 
@@ -17,3 +18,5 @@ let baseURL: URL                = baseFBURL
 
 let useAPI: Bool                = false
 let debuging: Bool              = true
+
+let cornerRadius:CGFloat        = 10

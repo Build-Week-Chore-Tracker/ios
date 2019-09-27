@@ -10,8 +10,8 @@ import UIKit
 
 class AdultChildDetailVC: UIViewController {
    
-        var user: User?
-        var userController: UserController?
+        //var user: User?
+        //var userController: UserController?
         
         @IBOutlet weak var nameTextField: UITextField!
         @IBOutlet weak var loginNameTextField: UITextField!
@@ -24,8 +24,7 @@ class AdultChildDetailVC: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
 			view.backgroundColor = .loginBackground
-            
-            // Do any additional setup after loading the view.
+            updateViews()
         }
         
         @IBAction func pictureURLEntered(_ sender: Any) {
@@ -48,7 +47,8 @@ class AdultChildDetailVC: UIViewController {
             pictureURL = pictureTextField.text ?? nil
             emailAddress = emailAddressTextField.text ?? nil
             do {
-                if let user = user { //Update user
+                print ("Curent Child = \(String(describing: UserController.currentChild))")
+                if let user = UserController.currentChild { //Update user
                     UserController.shared.update(user: user, name: name, loginName: loginName, password: password, emailAddress: emailAddress, child: true, picture: pictureURL)
                 } else { //Create/Add user
                     try UserController.shared.register(loginName: loginName, password: password, name: name, emailAddress: emailAddress, child: true, picture: pictureURL)
@@ -69,7 +69,9 @@ class AdultChildDetailVC: UIViewController {
         }
         
         private func updateViews() {
-            if let user = user { //Editing, fill out fields
+            print ("Running updateViews")
+            if let user = UserController.currentChild { //Editing, fill out fields
+                print ("Current user: \(String(describing: user.name))")
                 nameTextField.text = user.name
 				nameTextField.backgroundColor = .white
                 loginNameTextField.text = user.loginName
@@ -84,7 +86,7 @@ class AdultChildDetailVC: UIViewController {
                     imageView.downloaded(from: pictureURL)
                 }
             } else { //Adding new user/child
-                
+                print ("Adding new child")
             }
         }
         

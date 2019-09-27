@@ -24,6 +24,7 @@ class AdultChoreTemplateDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .loginBackground
         periodPicker.delegate = self
         periodPicker.dataSource = self
         pickerData.append("Daily")
@@ -40,20 +41,18 @@ class AdultChoreTemplateDetailVC: UIViewController {
                 let description = descriptionTextField.text, !description.isEmpty,
                 let notes = notesTextField.text, !notes.isEmpty,
                 let points = pointsTextField.text
-        else { return }
-        let pointsInt = Int32(points)
-        switch periodPicker.selectedRow(inComponent: 0) {
-        case 0:
-            period = "Daily"
-        case 1:
-            period = "Weekly"
-        case 2:
-            period = "Monthly"
-        default:
-            break
+        else {
+            alert(vc: self, title: "Error", message: "Please enter data for all fields.", error: nil)
+            return
         }
+        guard let pointsInt = Int32(points) else {
+            alert(vc: self, title: "Error", message: "Please enter a valid number for Points.", error: nil)
+            return
+        }
+        period = pickerData[periodPicker.selectedRow(inComponent: 0)]
         guard let currentUser = UserController.currentUser else { return }
-        choreTemplateController.create(name: name, choreDescription: description, period: period, pictureEvidence: pictureSwitch.isOn, points: pointsInt ?? 0, custom: true, owner: currentUser, notes: notes, parentTemplate: nil, assignedUser: nil)
+        choreTemplateController.create(name: name, choreDescription: description, period: period, pictureEvidence: pictureSwitch.isOn, points: pointsInt, custom: true, owner: currentUser, notes: notes, parentTemplate: nil, assignedUser: nil)
+        self.dismiss(animated: true, completion: nil)
     
     }
     
