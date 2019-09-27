@@ -79,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovj-Yu-li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3546" y="987"/>
+            <point key="canvasLocation" x="3551" y="1019"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="W96-9X-Rd4">
@@ -106,8 +106,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mni-Ms-n1B" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chores" id="Wjo-20-rS9"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jzG-6t-WGh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jzG-6t-WGh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

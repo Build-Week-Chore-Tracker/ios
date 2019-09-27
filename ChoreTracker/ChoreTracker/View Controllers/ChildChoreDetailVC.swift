@@ -21,6 +21,7 @@ class ChildChoreDetailVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .loginBackground
+		setViews()
 		updateViews()
 	}
 
@@ -43,6 +44,14 @@ class ChildChoreDetailVC: UIViewController {
 		dueDateLabel.text = dueDateString
 		descriptionLabel.text = chore.choreTemplate?.choreDescription ?? ""
 		pointsLabel.text = "\(chore.choreTemplate?.points ?? 0)"
+	}
+
+	private func setViews() {
+		choreLabel.backgroundColor = .white
+		dueDateLabel.backgroundColor = .white
+		descriptionLabel.backgroundColor = .white
+		pointsLabel.backgroundColor = .white
+
 	}
 
 	/*

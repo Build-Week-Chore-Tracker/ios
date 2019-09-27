@@ -71,10 +71,15 @@ class AdultChildDetailVC: UIViewController {
         private func updateViews() {
             if let user = user { //Editing, fill out fields
                 nameTextField.text = user.name
+				nameTextField.backgroundColor = .white
                 loginNameTextField.text = user.loginName
+				loginNameTextField.backgroundColor = .white
                 passwordTextField.text = user.password
+				passwordTextField.backgroundColor = .white
                 pictureTextField.text = user.picture
+				pictureTextField.backgroundColor = .white
                 emailAddressTextField.text = user.emailAddress
+				emailAddressTextField.backgroundColor = .white
                 if let pictureURL = user.picture {
                     imageView.downloaded(from: pictureURL)
                 }
