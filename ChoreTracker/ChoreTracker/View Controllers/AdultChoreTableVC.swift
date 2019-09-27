@@ -17,7 +17,7 @@ class AdultChoreTableViewController: UITableViewController {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         guard let currentUser = UserController.currentUser else { return nil }
-        fetchRequest.predicate = NSPredicate(format: "parent == %@", currentUser)
+        fetchRequest.predicate = NSPredicate(format: "owner == %@", currentUser)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
         frc.delegate = self
         do { try frc.performFetch() } catch { fatalError("NSFetchedResultsController failed: \(error)") }

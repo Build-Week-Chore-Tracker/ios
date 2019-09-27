@@ -57,6 +57,7 @@
 		E0D861BA233D035400460F50 /* UserNetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */; };
 		E0D861BC233D0A9700460F50 /* APIUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861BB233D0A9700460F50 /* APIUser.swift */; };
 		E0D861BE233D168400460F50 /* choreTrackerLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D861BD233D168400460F50 /* choreTrackerLogo.png */; };
+		E0D861C0233D874400460F50 /* AdultChoreTemplateDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D861BF233D874400460F50 /* AdultChoreTemplateDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		E0D861B9233D035400460F50 /* UserNetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNetworkingAPI.swift; sourceTree = "<group>"; };
 		E0D861BB233D0A9700460F50 /* APIUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUser.swift; sourceTree = "<group>"; };
 		E0D861BD233D168400460F50 /* choreTrackerLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = choreTrackerLogo.png; sourceTree = "<group>"; };
+		E0D861BF233D874400460F50 /* AdultChoreTemplateDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdultChoreTemplateDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				DD3E5986233A7EA300F4FD0C /* AdultChildTableVC.swift */,
 				DD3E5984233A7DC800F4FD0C /* AdultChoreDetailVC.swift */,
 				DD3E5982233A7D3900F4FD0C /* AdultChoreTableVC.swift */,
+				E0D861BF233D874400460F50 /* AdultChoreTemplateDetailVC.swift */,
 				DD3E5992233A846200F4FD0C /* ChildChoreDetailVC.swift */,
 				DD3E5994233A84B400F4FD0C /* ChildPointsVC.swift */,
 				DD3E598E233A82E700F4FD0C /* ChildTableVC.swift */,
@@ -354,6 +357,7 @@
 				E0A7F3CE23396E710038E55A /* UserController.swift in Sources */,
 				E0A7F3BD23396CC40038E55A /* ChoreTemplateRepresentation.swift in Sources */,
 				E0A7F3AF233813BD0038E55A /* ChoreTracker.xcdatamodeld in Sources */,
+				E0D861C0233D874400460F50 /* AdultChoreTemplateDetailVC.swift in Sources */,
 				E0A7F3B723396C5F0038E55A /* UserRepresentation.swift in Sources */,
 				E0A7F3B423384BD40038E55A /* Networking.swift in Sources */,
 				E0A7F3B923396C7C0038E55A /* SettingsRepresentation.swift in Sources */,
