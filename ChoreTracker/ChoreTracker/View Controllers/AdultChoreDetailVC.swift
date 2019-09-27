@@ -40,6 +40,9 @@ class AdultChoreDetailVC: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		navigationItem.title = "Chores"
 	}
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func savetapped(_ sender: Any) {
     }
@@ -77,8 +80,12 @@ class AdultChoreDetailVC: UIViewController {
             notesText.text = choreTemplate.notes
             let pointsString = String(choreTemplate.points)
             pointsText.text = pointsString
-            if let assignedUser = choreTemplate.assignedUser {
-                
+            if let _ = choreTemplate.assignedUser {
+                for childIndex in 0...childrenList.count - 1 {
+                    if childrenList[childIndex].name == choreTemplate.assignedUser?.name {
+                        childPicker.selectRow(childIndex + 1, inComponent: 0, animated: false)
+                    }
+                }
             }
             
     //            if childPicker.selectedRow(inComponent: 0) != 0 {

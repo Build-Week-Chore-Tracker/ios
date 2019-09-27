@@ -49,7 +49,11 @@ class ChildTableVC: UITableViewController {
 	}
 
 	// MARK: - Methods
-
+    @IBAction func signoutTapped(_ sender: Any) {
+        UserController.currentUser = nil
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
 
 	// MARK: - Table view data source

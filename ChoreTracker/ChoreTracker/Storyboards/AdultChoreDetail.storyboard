@@ -217,7 +217,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="3Pb-Ve-ctB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wTf-vR-0jC"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wTf-vR-0jC">
+                            <connections>
+                                <action selector="cancelTapped:" destination="OHd-1Y-A1X" id="0Wy-gt-ns8"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="49h-4P-EQa">
                             <connections>
                                 <action selector="savetapped:" destination="OHd-1Y-A1X" id="p4L-d5-Cdk"/>
