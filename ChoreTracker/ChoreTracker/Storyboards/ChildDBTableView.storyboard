@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aYh-UF-3CW">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Child Dashboard-->
+        <scene sceneID="K6f-0c-1nl">
+            <objects>
+                <tableViewController title="Child Dashboard" id="rf4-3K-nOp" customClass="ChildTableVC" customModule="ChoreTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Va-N8-Puu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoreCell" rowHeight="70" id="804-eW-uiP" customClass="childviewcell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="804-eW-uiP" id="TnN-6B-Ebi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chore name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnN-Sv-fx2">
+                                            <rect key="frame" x="8" y="8" width="300" height="53.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="300" id="lbi-tB-NsR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n3N-W2-2k0">
+                                            <rect key="frame" x="334.5" y="8" width="71.5" height="53.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFM-Mx-eU4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71.5" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvV-um-fcm">
+                                                    <rect key="frame" x="0.0" y="33" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BnN-Sv-fx2" firstAttribute="centerY" secondItem="TnN-6B-Ebi" secondAttribute="centerY" id="7u6-T1-35r"/>
+                                        <constraint firstItem="BnN-Sv-fx2" firstAttribute="leading" secondItem="TnN-6B-Ebi" secondAttribute="leading" constant="8" id="8wn-BX-AxS"/>
+                                        <constraint firstItem="n3N-W2-2k0" firstAttribute="top" secondItem="TnN-6B-Ebi" secondAttribute="top" constant="8" id="DXj-S6-LhR"/>
+                                        <constraint firstAttribute="trailing" secondItem="n3N-W2-2k0" secondAttribute="trailing" constant="8" id="Kaj-gY-EMZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="BnN-Sv-fx2" secondAttribute="bottom" constant="8" id="OVm-7e-NNQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="n3N-W2-2k0" secondAttribute="bottom" constant="8" id="ZLM-Sq-Yiq"/>
+                                        <constraint firstItem="BnN-Sv-fx2" firstAttribute="top" secondItem="TnN-6B-Ebi" secondAttribute="top" constant="8" id="g90-es-iE0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="choreLabel" destination="BnN-Sv-fx2" id="en7-Bx-OjA"/>
+                                    <outlet property="dueDateLabel" destination="aFM-Mx-eU4" id="VEd-By-qny"/>
+                                    <outlet property="pointsLabel" destination="fvV-um-fcm" id="d54-cA-TY5"/>
+                                    <segue destination="2yK-Vj-tYa" kind="show" identifier="ChildChoreSegue" id="ZDU-m0-TLF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rf4-3K-nOp" id="xgl-5M-ZFg"/>
+                            <outlet property="delegate" destination="rf4-3K-nOp" id="I0c-Uz-gUi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Child Dashboard" id="2KR-7w-5Ha">
+                        <barButtonItem key="leftBarButtonItem" title="Signout" id="T6b-4h-tP1">
+                            <connections>
+                                <action selector="signoutTapped:" destination="rf4-3K-nOp" id="IvL-6S-rjN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ovj-Yu-li7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3551" y="1019"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="W96-9X-Rd4">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aYh-UF-3CW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RBh-G5-hH7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mni-Ms-n1B" kind="relationship" relationship="viewControllers" id="zdD-m8-hbe"/>
+                        <segue destination="eR7-3M-85v" kind="relationship" relationship="viewControllers" id="Jc0-kh-YWr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cA4-Wp-uqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="1019"/>
+        </scene>
+        <!--Chores-->
+        <scene sceneID="HBs-Jr-pL8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mni-Ms-n1B" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chores" id="Wjo-20-rS9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jzG-6t-WGh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rf4-3K-nOp" kind="relationship" relationship="rootViewController" id="lMp-4Q-3gt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dd8-sx-LJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2817" y="1019"/>
+        </scene>
+        <!--ChildDBPoints-->
+        <scene sceneID="DRU-dd-1ya">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChildDBPoints" id="eR7-3M-85v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ds0-So-ONW"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YJi-qu-Cvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="1592"/>
+        </scene>
+        <!--ChildDBChoreDetail-->
+        <scene sceneID="d4M-BU-UpS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChildDBChoreDetail" id="2yK-Vj-tYa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6S-mb-Ec7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4375" y="1026"/>
+        </scene>
+    </scenes>
+</document>
