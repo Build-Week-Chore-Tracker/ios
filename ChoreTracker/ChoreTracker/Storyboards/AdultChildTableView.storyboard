@@ -116,8 +116,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="seO-D5-u6F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Child" id="1C3-BP-Ebi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5RW-De-UYD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5RW-De-UYD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

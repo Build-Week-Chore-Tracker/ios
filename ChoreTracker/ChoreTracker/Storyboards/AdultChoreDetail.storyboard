@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UI2-gD-heX">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UI2-gD-heX">
+                                <rect key="frame" x="0.0" y="74" width="414" height="44"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Title" id="mAH-mq-RDj">
@@ -31,40 +30,40 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="spe-wG-6Es">
-                                <rect key="frame" x="40" y="118" width="334" height="295"/>
+                                <rect key="frame" x="40" y="118" width="334" height="320"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chore Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C2i-nD-i8u">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Due Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GxU-ND-5yU">
-                                        <rect key="frame" x="0.0" y="54" width="334" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="58" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vED-R7-VWz">
-                                        <rect key="frame" x="0.0" y="107.5" width="334" height="26"/>
+                                        <rect key="frame" x="0.0" y="116" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3aD-2R-fmk">
-                                        <rect key="frame" x="0.0" y="161.5" width="334" height="26"/>
+                                        <rect key="frame" x="0.0" y="174" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Point Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZFk-3w-N9x">
-                                        <rect key="frame" x="0.0" y="215.5" width="334" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="232" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Assign To Child" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bh7-9t-NKy">
-                                        <rect key="frame" x="0.0" y="269" width="334" height="26"/>
+                                        <rect key="frame" x="0.0" y="290" width="334" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -74,10 +73,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="spe-wG-6Es" firstAttribute="top" secondItem="DyE-gH-RiF" secondAttribute="top" constant="30" id="01p-1X-N34"/>
+                            <constraint firstItem="spe-wG-6Es" firstAttribute="top" secondItem="UI2-gD-heX" secondAttribute="bottom" id="0FC-ad-jad"/>
                             <constraint firstItem="spe-wG-6Es" firstAttribute="leading" secondItem="DyE-gH-RiF" secondAttribute="leading" constant="40" id="JCo-P3-60E"/>
                             <constraint firstItem="DyE-gH-RiF" firstAttribute="trailing" secondItem="spe-wG-6Es" secondAttribute="trailing" constant="40" id="cHg-4V-aXP"/>
-                            <constraint firstItem="DyE-gH-RiF" firstAttribute="bottom" secondItem="spe-wG-6Es" secondAttribute="bottom" constant="400" id="ovy-89-4Fz"/>
+                            <constraint firstItem="DyE-gH-RiF" firstAttribute="bottom" secondItem="spe-wG-6Es" secondAttribute="bottom" constant="375" id="ovy-89-4Fz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DyE-gH-RiF"/>
                     </view>
@@ -87,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2s0-dL-yRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4630" y="122"/>
+            <point key="canvasLocation" x="4417" y="119"/>
         </scene>
     </scenes>
 </document>
