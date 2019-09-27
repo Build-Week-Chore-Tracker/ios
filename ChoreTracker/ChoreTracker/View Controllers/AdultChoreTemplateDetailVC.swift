@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import CoreData
 
 class AdultChoreTemplateDetailVC: UIViewController {
 
     var choreTemplate: ChoreTemplate?
-    var choreTemplateController: ChoreTemplateController?
     var pickerData: [String] = []
+    var childrenList: [User] = {
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        guard let currentUser = UserController.currentUser else { return [] }
+        //print ("childrenList: CurrentUser = \(String(describing: currentUser))")
+        fetchRequest.predicate = NSPredicate(format: "parent == %@", currentUser)
+        do {
+            let children = try context.fetch(fetchRequest)
+            //print ("childrenList: Children = \(String(describing: children))")
+            return children
+        } catch {
+            NSLog("uniqueLoginName: Error fetching children for picker")
+            return []
+        }
+    } ()
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
@@ -21,12 +37,15 @@ class AdultChoreTemplateDetailVC: UIViewController {
     @IBOutlet weak var pointsTextField: UITextField!
     @IBOutlet weak var periodPicker: UIPickerView!
     
+    @IBOutlet weak var childPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .loginBackground
         periodPicker.delegate = self
         periodPicker.dataSource = self
+        childPicker.delegate = self
+        childPicker.dataSource = self
         pickerData.append("Daily")
         pickerData.append("Weekly")
         pickerData.append("Monthly")
@@ -36,8 +55,8 @@ class AdultChoreTemplateDetailVC: UIViewController {
     
     @IBAction func saveTemplateTapped(_ sender: Any) {
         var period: String = ""
-        guard   let choreTemplateController = choreTemplateController,
-                let name = nameTextField.text, !name.isEmpty,
+        var assignedChild: User?
+        guard   let name = nameTextField.text, !name.isEmpty,
                 let description = descriptionTextField.text, !description.isEmpty,
                 let notes = notesTextField.text, !notes.isEmpty,
                 let points = pointsTextField.text
@@ -49,10 +68,19 @@ class AdultChoreTemplateDetailVC: UIViewController {
             alert(vc: self, title: "Error", message: "Please enter a valid number for Points.", error: nil)
             return
         }
+        if childPicker.selectedRow(inComponent: 0) != 0 {
+            assignedChild = childrenList[childPicker.selectedRow(inComponent: 0)-1]
+            print ("Saving assigned child as \(String(describing: assignedChild))")
+        }
         period = pickerData[periodPicker.selectedRow(inComponent: 0)]
         guard let currentUser = UserController.currentUser else { return }
-        choreTemplateController.create(name: name, choreDescription: description, period: period, pictureEvidence: pictureSwitch.isOn, points: pointsInt, custom: true, owner: currentUser, notes: notes, parentTemplate: nil, assignedUser: nil)
-        self.dismiss(animated: true, completion: nil)
+        if let choreTemplate = choreTemplate { //Editing, so update
+            ChoreTemplateController.shared.update(choreTemplate: choreTemplate, name: name, choreDescription: description, period: period, pictureEvidence: pictureSwitch.isOn, points: pointsInt, custom: true, owner: currentUser, notes: notes, parentTemplate: nil, assignedUser: assignedChild ?? nil)
+        } else { //Create new one
+            ChoreTemplateController.shared.create(name: name, choreDescription: description, period: period, pictureEvidence: pictureSwitch.isOn, points: pointsInt, custom: true, owner: currentUser, notes: notes, parentTemplate: nil, assignedUser: assignedChild ?? nil)
+        }
+        
+        self.navigationController?.popViewController(animated: true)
     
     }
     
@@ -60,7 +88,7 @@ class AdultChoreTemplateDetailVC: UIViewController {
     private func updateViews() {
         if let choreTemplate = choreTemplate {
             nameTextField.text = choreTemplate.name
-            descriptionTextField.text = choreTemplate.description
+            descriptionTextField.text = choreTemplate.choreDescription
             notesTextField.text = choreTemplate.notes
             pictureSwitch.isOn = choreTemplate.pictureEvidence
             pointsTextField.text = String(choreTemplate.points)
@@ -97,7 +125,14 @@ extension AdultChoreTemplateDetailVC: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        switch pickerView.tag {
+        case 0:
+            return 3
+        case 1:
+            return childrenList.count + 1
+        default:
+            return 0
+        }
     }
     
     
@@ -105,6 +140,21 @@ extension AdultChoreTemplateDetailVC: UIPickerViewDataSource {
 
 extension AdultChoreTemplateDetailVC: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        switch pickerView.tag {
+        case 0:
+            return pickerData[row]
+        case 1:
+            //print ("Doing Child Picker...")
+            if row == 0 {
+                //print ("row 0...None")
+                return "None"
+            } else {
+                //print ("other rows... \(childrenList[row-1].name ?? "Empty")")
+                return childrenList[row-1].name ?? ""
+            }
+        default:
+            return ""
+        }
+        
     }
 }
