@@ -28,7 +28,7 @@ class ChoreTemplateController {
         completion()
     }
     
-    func getNextID () -> Int32? {
+    private func getNextID () -> Int32? {
         let context = CoreDataStack.shared.mainContext
         let fetchRequest: NSFetchRequest<ChoreTemplate> = ChoreTemplate.fetchRequest()
         var idNumber: Int32

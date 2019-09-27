@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class LoginViewController: UIViewController {
 
 	// MARK: - Properties
@@ -32,6 +31,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .loginBackground
         regView.backgroundColor = .loginBackground
+        usernameTextField.becomeFirstResponder()
+        passwordTextField.delegate = self
         updateViews()
         // Do any additional setup after loading the view.
     }
@@ -42,9 +43,9 @@ class LoginViewController: UIViewController {
         case 0:
             loginSegmentControl.isHidden = false
         case 1:
-            //loginSegmentControl.selectedSegmentIndex = 0
-            //loginSegmentControl.isHidden = true
-            //login = true
+            loginSegmentControl.selectedSegmentIndex = 0
+            loginSegmentControl.isHidden = true
+            login = true
             updateViews()
         default:
             break
@@ -54,8 +55,6 @@ class LoginViewController: UIViewController {
 	@IBAction func loginSegmentControl(_ sender: Any) {
         switch loginSegmentControl.selectedSegmentIndex {
         case 0:
-            loginButtonText.setTitle("Login", for: .normal)
-            signupLoginLabel.text = "Login"
             login = true
             updateViews()
         case 1:
@@ -65,6 +64,22 @@ class LoginViewController: UIViewController {
             break
         }
 	}
+    
+    
+    private func updateViews() {
+        if login {
+            regView.isHidden = true
+            loginSegmentControl.selectedSegmentIndex = 0
+            usernameTextField.becomeFirstResponder()
+            loginButtonText.setTitle("Login", for: .normal)
+            signupLoginLabel.text = "Login"
+        } else {
+            regView.isHidden = false
+            fullNameTextField.becomeFirstResponder()
+            loginButtonText.setTitle("Register", for: .normal)
+            signupLoginLabel.text = "Register"
+        }
+    }
     
 	@IBAction func loginButtonTapped(_ sender: Any) {
         if login { //Perform Login
@@ -127,17 +142,10 @@ class LoginViewController: UIViewController {
         }
         
 	}
-    
-    private func updateViews() {
-        if login {
-            regView.isHidden = true
-            loginSegmentControl.selectedSegmentIndex = 0
-            loginButtonText.setTitle("Login", for: .normal)
-            signupLoginLabel.text = "Login"
-        } else {
-            regView.isHidden = false
-            loginButtonText.setTitle("Register", for: .normal)
-            signupLoginLabel.text = "Register"
-        }
+}
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        loginButtonText.becomeFirstResponder()
+        return true
     }
 }

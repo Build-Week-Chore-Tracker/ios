@@ -15,7 +15,7 @@ class AdultChoreTableViewController: UITableViewController {
     
     lazy var choreFRC: NSFetchedResultsController<Chore>? = {
         let fetchRequest: NSFetchRequest<Chore> = Chore.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdDate", ascending: true)]
         guard let currentUser = UserController.currentUser else { return nil }
         fetchRequest.predicate = NSPredicate(format: "owner == %@", currentUser)
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: nil, cacheName: nil)
