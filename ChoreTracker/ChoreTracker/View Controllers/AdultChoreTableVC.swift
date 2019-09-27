@@ -26,6 +26,8 @@ class AdultChoreTableViewController: UITableViewController {
     }()
     
     @IBAction func unwindToTableView(segue: UIStoryboardSegue) {}
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,8 @@ class AdultChoreTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+
+	
     
     // MARK: - Table view data source
     
@@ -84,6 +88,9 @@ class AdultChoreTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+		navigationItem.title = nil
+		
         guard let vc = segue.destination as? AdultChoreDetailVC else { return }
         guard let frc = choreFRC else { return }
         vc.choreController = choreController

@@ -34,6 +34,10 @@ class AdultChoreDetailVC: UIViewController {
 		view.backgroundColor = .loginBackground
         // Do any additional setup after loading the view.
     }
+
+	override func viewWillAppear(_ animated: Bool) {
+		navigationItem.title = "Chores"
+	}
     
 
     private func updateViews() {
@@ -84,6 +88,7 @@ extension AdultChoreDetailVC: UITableViewDataSource {
         }
     }
 }
+
 
 extension AdultChoreDetailVC: UITableViewDelegate {
  
