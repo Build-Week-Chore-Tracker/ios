@@ -83,17 +83,18 @@ class AdultChildTableVC: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? AdultChildDetailVC else { return }
+        //guard let vc = segue.destination as? AdultChildDetailVC else { return }
         guard let frc = fetchResultsController else { return }
-        vc.userController = userController
+        //vc.userController = userController
         switch segue.identifier {
         case "EditChildSegue":
             if let indexPath = tableView.indexPathForSelectedRow {
                 let user = frc.object(at: indexPath)
-                vc.user = user
+                UserController.currentChild = user
                 NSLog("AdultChildTableVC: Sending user: \(String(describing: user.name))")
             }
         case "AddChildSegue":
+            UserController.currentChild = nil
             break
         default:
             break
