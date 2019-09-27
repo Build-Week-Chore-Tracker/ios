@@ -28,8 +28,26 @@ class ChoreTemplateController {
         completion()
     }
     
-    @discardableResult func create(id: Int32,
-								   name: String,
+    func getNextID () -> Int32? {
+        let context = CoreDataStack.shared.mainContext
+        let fetchRequest: NSFetchRequest<ChoreTemplate> = ChoreTemplate.fetchRequest()
+        var idNumber: Int32
+        do {
+            fetchRequest.predicate = NSPredicate(value: true)
+            let choreTemplates = try context.fetch(fetchRequest)
+            idNumber = Int32(choreTemplates.count)
+            let allIDs = choreTemplates.map ( { $0.id } )
+            while allIDs.contains(idNumber) {
+                idNumber += 1
+            }
+        } catch {
+            NSLog("Error fetching users for getNextID: \(error)")
+            return nil
+        }
+        return idNumber
+    }
+    
+    @discardableResult func create(name: String,
 								   choreDescription: String,
 								   period: String,
 								   pictureEvidence: Bool,
@@ -38,7 +56,8 @@ class ChoreTemplateController {
 								   owner: User,
 								   notes: String,
 								   parentTemplate: ChoreTemplate?,
-								   assignedUser: User?) -> ChoreTemplate {
+								   assignedUser: User?) -> ChoreTemplate? {
+        guard let id = getNextID() else { return nil }
         let choreTemplate = ChoreTemplate(id: id, name: name, choreDescription: choreDescription, period: period, pictureEvidence: pictureEvidence, points: points, custom: custom, owner: owner, notes: notes, parentTemplate: parentTemplate, assignedUser: assignedUser, context:  CoreDataStack.shared.mainContext)
         CoreDataStack.shared.save()
         //put(choreTemplate: choreTemplate!)
